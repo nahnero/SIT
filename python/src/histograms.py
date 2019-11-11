@@ -1,9 +1,15 @@
 # Started Tue  5 Nov 22:04:06 2019 by nahnero. #
+"""
+This script imports matrix x and vector y and generates histograms,
+'../images/hist.pdf' contains the histograms before removing outliers.
+Then it imports from the preprocessing module x_no and y_no, the same
+data without the outliers.  It generates the histograms '../images/hist1.pdf'.
+"""
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 
-#  load preprocessed data, x and y are ray, x_no and y_no contain no outliers
+#  load preprocessed data, x and y are raw, x_no and y_no contain no outliers
 from preprocessing import x, y, x_no, y_no, labels
 
 #  colours for the histograms

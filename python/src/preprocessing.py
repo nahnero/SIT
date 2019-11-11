@@ -1,13 +1,8 @@
 # Started Tue  5 Nov 22:04:06 2019 by nahnero. #
 """
-This script reads data from ./data.csv, parses class and parameters,
-and generates two pdfs, './hist.pdf' containing the histograms before
-removing outliers and './hist1.pdf' after.
-
-YOU MUST INSTALL DEPENDENCIES BEFORE RUNNING
-    - numpy
-    - matplotlib
-    - scipy
+This script reads data from ../../data.csv, parses parameters and classification,
+It generates a matrix x of variables and a vector y, it also generates
+x_no and y_no, which exclude outliers.
 """
 
 import numpy as np
