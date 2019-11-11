@@ -19,18 +19,14 @@ fc = [(), (0, 1, 0, 0.6), (0, 0, 1, 0.6)]
 fig, ax = plt.subplots (nrows = 5, ncols = 2, figsize = (13, 10))
 ax = ax.flatten ()
 
-#  proper, clear way of coding the loop
-#  for i in range (0, 9):
-    #  for j in [1, 2]:
-        #  ax[i].hist (x [y == j, i], bins = 15, fc = fc [j], label = labels [i] + str (j))
-        #  ax[i].legend ()
+#  draws each of the histograms, two for each variable
+for i in range (0, 9):
+    for j in [1, 2]:
+        ax[i].hist (x [y == j, i], bins = 15, fc = fc [j], label = labels [i] + str (j))
+        ax[i].legend (loc = 1, prop={'size': 15})
 
-#  faster, less readable way of coding the loop, they both do exactly SAME thing
-[(ax[i].hist (x [y == j, i], bins = 15, fc = fc [j], label = labels [i] + str (j)),
-  ax[i].legend ()) for i in range (0, 9) for j in range (1,3)]
-
-fig.suptitle ('con anómalos')
-fig.savefig  ('../images/hist.pdf')
+fig.suptitle ('con anómalos', fontsize = 30)
+fig.savefig  ('../images/hist.pdf', bbox_inches = 'tight', pad_inches = 0)
 
 ###############################
 #  SAME BUT WITHOUT OUTLIERS  #
@@ -39,8 +35,9 @@ fig.savefig  ('../images/hist.pdf')
 fig_no, ax_no = plt.subplots (nrows = 5, ncols = 2, figsize = (13, 10))
 ax_no = ax_no.flatten ()
 
+#  faster, less readable way of coding the loop, they both do exactly SAME thing
 [(ax_no[i].hist (x_no [y_no == j, i], bins = 15, fc = fc [j], label = labels [i] + str (j)),
-  ax_no[i].legend ()) for i in range (0, 9) for j in range (1,3)]
+  ax_no[i].legend (loc = 1, prop={'size': 15})) for i in range (0, 9) for j in range (1,3)]
 
-fig_no.suptitle ('sin anómalos')
-fig_no.savefig  ('../images/hist1.pdf')
+fig_no.suptitle ('sin anómalos', fontsize = 30)
+fig_no.savefig  ('../images/hist1.pdf', bbox_inches = 'tight', pad_inches = 0)
