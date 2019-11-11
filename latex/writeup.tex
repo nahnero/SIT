@@ -1,6 +1,5 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
-% \usepackage{babel}
 \usepackage[a4paper, top = 20mm, bottom=20mm, right=20mm, left=20mm] {geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -20,11 +19,6 @@
 \thanks{\href{https://www.upv.es/titulaciones/GIB/indexc.html}{Grado en Ingeniería Biomédica, Escuela Técnica Superior de Ingenieros Industriales, Valencia, España.}}
 }
 
-% \lstset{language=Python,
-% inputencoding=utf8/latin1,
-% frame=single,
-% numbers=left,
-% }
 \lstset{
 	language=Python,
 	inputencoding=utf8/latin1,
@@ -41,29 +35,21 @@
 	breaklines=true,
 	prebreak=\mbox{{\color{gray}\tiny$\searrow$}},
 	captionpos=b,
-	% xleftmargin=15pt
 }
+
 \begin{document}
+
 \maketitle
-
-
-% \begin{lstlisting}[
-	% style=Matlab-editor,
-	% frame=single,
-	% numbers=left,
-	% label=lst:cod4,
-	% caption={Resultado de {\lstinline[style=matlab-editor]{classperf}}},
-	% captionpos=b,
-	% ]
 \lstinputlisting[
-	linerange = {13-36},
+	linerange = {13-38},
 	caption = {Importaciones iniciales y preparacion de datos.},
-	]{../python/src/ejercicio1.py}
+	]{../python/src/preprocessing.py}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width = 0.7\linewidth]{../python/images/hist.pdf}
-\caption{CAPTION.}
+\includegraphics[width = 0.49\linewidth]{../python/images/hist.pdf}
+\includegraphics[width = 0.49\linewidth]{../python/images/hist1.pdf}
+\caption{Histogramas para datos con y sinanomalias.}
 \label{fig:LABEL_NAME}
 \end{figure}
 \end{document}
