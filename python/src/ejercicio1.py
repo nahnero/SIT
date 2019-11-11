@@ -16,23 +16,23 @@ import matplotlib.pyplot as plt
 from   scipy import stats
 
 #  loads data
-data = np.loadtxt (open (r'./data.csv', 'rb'), delimiter = ',')
+data = np.loadtxt (open (r'../../data.csv', 'rb'), delimiter = ',')
 
-#  rewrites data as all the rows of data w/out nan cells
+#  rewrites $\color[HTML]{000000}\text{data}$ as all the rows of $\color[HTML]{000000}\text{data}$ w/out nan cells
 data = data [~np.isnan (data).any (axis=1)]
 
-#  separates parameters into matrix x
+#  separates parameters into matrix $\color[HTML]{000000}\text{x}$
 x    = np.array ([list (data [x][:-1])    for x in range (len (data))])
 
-#  and class (1, 2) into vector y
+#  and class (1, 2) into vector $\color[HTML]{000000}\text{y}$
 y    = np.array ([int  (data [x][ -1])    for x in range (len (data))])
 
 labels = ['age', 'leptin', 'bmi', 'adiponectin', 'glucose',
         'resistin', 'insulin', 'MCP1', 'HOMA']
 
 #  colours
-fc = [(0), (0,1,0,0.6), (0,0,1,0.6)]
-#           R G B α ← transparency
+fc = [(), (0, 1, 0, 0.6), (0, 0, 1, 0.6)]
+#         (R, G, B,  $\color[HTML]{228B22}\alpha$  )$\color[HTML]{228B22}\leftarrow$ transparency
 
 fig, ax = plt.subplots (nrows = 5, ncols = 2, figsize = (13, 10))
 ax = ax.flatten ()
@@ -48,7 +48,7 @@ ax = ax.flatten ()
   ax[i].legend ()) for i in range (0, 9) for j in range (1,3)]
 
 fig.suptitle ('con anómalos')
-fig.savefig  ('hist.pdf')
+fig.savefig  ('../images/hist.pdf')
 
 ###############################
 #  SAME BUT WITHOUT OUTLIERS  #
@@ -56,7 +56,7 @@ fig.savefig  ('hist.pdf')
 
 #  removes outliers
 data_no = data [(np.abs (stats.zscore (data)) < 3).all (axis = 1)]
-#    ↑ = No Outliers
+#    $\color[HTML]{228B22}\uparrow$ = No Outliers
 
 x_no = np.array ([list (data_no [x][:-1]) for x in range (len (data_no))])
 y_no = np.array ([int  (data_no [x][ -1]) for x in range (len (data_no))])
@@ -68,4 +68,4 @@ ax_no = ax_no.flatten ()
   ax_no[i].legend ()) for i in range (0, 9) for j in range (1,3)]
 
 fig_no.suptitle ('sin anómalos')
-fig_no.savefig  ('hist1.pdf')
+fig_no.savefig  ('../images/hist1.pdf')
