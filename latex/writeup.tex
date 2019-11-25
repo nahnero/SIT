@@ -82,7 +82,7 @@ En este apartado dibujamos los histogramas comparativos.
 
 \lstinputlisting[
 	linerange = {9-32},
-	caption = {C\'odigo generador de los histogramas con datos
+	caption = {C\'odigo generador de los kernel density plots con datos
 	an\'omalos.},
 	]{../python/src/kerneldensity.py}
 
@@ -98,8 +98,24 @@ En este apartado dibujamos los histogramas comparativos.
 
 \lstinputlisting[
 	linerange = {9-24},
-	caption = {C\'odigo generador de los histogramas con datos
+	caption = {C\'odigo generador de los boxplots con datos
 	an\'omalos.},
 	]{../python/src/boxplot.py}
 
+\newpage
+\section{QQplot}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.49\linewidth]{../python/images/qqp.pdf}
+\includegraphics[width = 0.49\linewidth]{../python/images/qqp1.pdf}
+\caption{QQplots para datos con y sin anomalias.}
+\label{fig:qqps}
+\end{figure}
+
+\lstinputlisting[
+	linerange = {9-28},
+	caption = {C\'odigo generador de los QQplots con datos
+	an\'omalos.},
+	]{../python/src/qqplot.py}
 \end{document}
