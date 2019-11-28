@@ -1,0 +1,12 @@
+\babel@toc {nil}{}
+\textbf {Secci\IeC {\'o}n}~\hfill \textbf {P\IeC {\'a}gina}\par 
+\contentsline {section}{\numberline {1}{Pre\IeC {\'a}mbulo}}{3}{section.1}% 
+\contentsline {section}{\numberline {2}{Histogramas}}{4}{section.2}% 
+\contentsline {section}{\numberline {3}{Kernel Density}}{5}{section.3}% 
+\contentsline {section}{\numberline {4}{Boxplot}}{6}{section.4}% 
+\contentsline {section}{\numberline {5}{QQplot}}{7}{section.5}% 
+\contentsline {section}{\numberline {6}{Corrplot}}{8}{section.6}% 
+\contentsline {section}{\numberline {7}{Filter Methods}}{10}{section.7}% 
+\contentsline {section}{\numberline {8}{Wrapper Methods}}{11}{section.8}% 
+\contentsline {section}{\numberline {9}{PCA}}{12}{section.9}% 
+\contentsline {subsection}{\numberline {9.1}{Pareto}}{12}{subsection.9.1}% 
