@@ -59,7 +59,6 @@ print ('Sequential Backward Selection', sfs.k_feature_names_, end = '\n\n')
 #  PCA
 from sklearn.preprocessing import StandardScaler
 x_no = StandardScaler ().fit_transform (x_no) #  typify
-
 from sklearn.decomposition import PCA
 pca = PCA (n_components = 9)
 principalComponents = pca.fit_transform(x_no)
@@ -68,14 +67,32 @@ evr = pca.explained_variance_ratio_
 print (evr)
 print (np.cumsum (evr))
 
+#  Biplot
+def biplot(score,coeff,pcax,pcay,labels=None):
+    pca1=pcax-1; pca2=pcay-1
+    xs = score[:,pca1]; ys = score[:,pca2]
+    n=score.shape[1]
+    scalex = 1.0/(xs.max()- xs.min()); scaley = 1.0/(ys.max()- ys.min())
+    plt.scatter(xs*scalex,ys*scaley)
+    for i in range(n):
+        plt.arrow(0, 0, coeff[i,pca1], coeff[i,pca2],color='r',alpha=0.5)
+        if labels is None:
+            plt.text(coeff[i,pca1]* 1.15, coeff[i,pca2] * 1.15, "Var"+str(i+1), color='g', ha='center', va='center')
+        else:
+            plt.text(coeff[i,pca1]* 1.15, coeff[i,pca2] * 1.15, labels[i], color='g', ha='center', va='center')
+    plt.xlim(-1,1); plt.ylim(-1,1)
+    plt.xlabel("PC{}".format(pcax)); plt.ylabel("PC{}".format(pcay))
+    return plt
+bp = biplot (pca.fit_transform (x_no), pca.components_,1,2)
+bp.suptitle ('Biplot', fontsize = 20)
+bp.savefig  ('../images/biplotpca.pdf', bbox_inches = 'tight', pad_inches = 0)
+
 #  Pareto
 fig, ax = plt.subplots ()
 ax.bar (range (len (evr)), evr)
 ax.set_ylim (top=1)
-
 ax1 = ax.twinx ()
 ax1.set_ylim (top=100)
 ax1.plot (range (len (evr)), np.cumsum (evr)*100, marker = '.', color = 'red')
-
 fig.suptitle ('Pareto', fontsize = 20)
 fig.savefig  ('../images/pareto.pdf', bbox_inches = 'tight', pad_inches = 0)

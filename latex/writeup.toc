@@ -10,3 +10,4 @@
 \contentsline {section}{\numberline {8}{Wrapper Methods}}{11}{section.8}% 
 \contentsline {section}{\numberline {9}{PCA}}{12}{section.9}% 
 \contentsline {subsection}{\numberline {9.1}{Pareto}}{12}{subsection.9.1}% 
+\contentsline {subsection}{\numberline {9.2}{Biplot}}{13}{subsection.9.2}% 

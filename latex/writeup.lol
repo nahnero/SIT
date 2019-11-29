@@ -9,4 +9,6 @@
 \contentsline {lstlisting}{\numberline {9}Aplicaci\'on m\'etodos \textit {wrapper} de selecci\'on caracter\'isticas.}{11}{lstlisting.9}% 
 \contentsline {lstlisting}{\numberline {10}Resultados del filtrado mediante wrappers.}{11}{lstlisting.10}% 
 \contentsline {lstlisting}{\numberline {11}\textit {Principal Component Analysis}}{12}{lstlisting.11}% 
-\contentsline {lstlisting}{\numberline {12}C\'odigo generador del diagrama de Pareto}{12}{lstlisting.12}% 
+\contentsline {lstlisting}{\numberline {12}Varianza explicada por componente y suma acumulada.}{12}{lstlisting.12}% 
+\contentsline {lstlisting}{\numberline {13}C\'odigo generador del diagrama de Pareto}{12}{lstlisting.13}% 
+\contentsline {lstlisting}{\numberline {14}C\'odigo generador del Biplot.}{13}{lstlisting.14}% 

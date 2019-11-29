@@ -159,18 +159,18 @@ En este apartado dibujamos los histogramas comparativos.
 \newpage
 \seccion{Corrplot}
 \vfill
-\lstinputlisting[
-	linerange = {13-17},
-	caption = {[C\'odigo generador de los corrplots con datos an\'omalos.]
-	\lstcaption{C\'odigo generador de los corrplots con datos an\'omalos.}},
-	]{../python/src/corrplot.py}
-\vfill
 \begin{figure}[h]
 \centering
 \includegraphics[width = \linewidth]{../python/images/corrp.pdf}
 \figcaption{Corrplot para datos con anomalias.}
 \label{fig:cps}
 \end{figure}
+\vfill
+\lstinputlisting[
+	linerange = {13-18},
+	caption = {[C\'odigo generador de los corrplots con datos an\'omalos.]
+	\lstcaption{C\'odigo generador de los corrplots con datos an\'omalos.}},
+	]{../python/src/corrplot.py}
 \vfill
 
 \newpage
@@ -210,7 +210,7 @@ En este apartado dibujamos los histogramas comparativos.
 \seccion{Wrapper Methods}
 
 \lstinputlisting[
-	linerange = {37 - 58},
+	linerange = {38 - 58},
 	caption = {[Aplicaci\'on m\'etodos \textit{wrapper} de selecci\'on caracter\'isticas.]
 	\lstcaption{Aplicaci\'on m\'etodos \textit{wrapper} de selecci\'on caracter\'isticas.}},
 	]{../python/src/featureselection.py}
@@ -229,24 +229,50 @@ Sequential Backward Selection ('leptin', 'bmi', 'glucose', 'insulin')
 \seccion{PCA}
 
 \lstinputlisting[
-	linerange = {60-67},
+	linerange = {60-65},
 	caption = {[\textit{Principal Component Analysis}]
 	\lstcaption{\textit{Principal Component Analysis}}},
 	]{../python/src/featureselection.py}
+
+\begin{lstlisting}[
+	caption = {[Varianza explicada por componente y suma acumulada.]
+       {\lstcaption{Varianza explicada por componente y suma acumulada.}}},
+	]
+[0.29146865 0.18490568 0.14125105 0.11727276 0.08486126 0.07999359
+ 0.06636991 0.03254865 0.00132847]
+[0.29146865 0.47637432 0.61762537 0.73489813 0.81975939 0.89975298
+0.96612289 0.99867153 1.        ]
+\end{lstlisting}
 
 \subseccion{Pareto}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width = 0.7\linewidth]{../python/images/pareto.pdf}
+\includegraphics[width = 0.6\linewidth]{../python/images/pareto.pdf}
 \figcaption{Diagrama de Pareto.}
 \label{fig:pareto}
 \end{figure}
 
 \lstinputlisting[
-	linerange = {72-82},
+	linerange = {92-108},
 	caption = {[C\'odigo generador del diagrama de Pareto]
 	\lstcaption{C\'odigo generador del diagrama de Pareto}},
+	]{../python/src/featureselection.py}
+
+\newpage
+\subseccion{Biplot}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.7\linewidth]{../python/images/biplotpca.pdf}
+\figcaption{Biplot.}
+\label{fig:biplot}
+\end{figure}
+
+\lstinputlisting[
+	linerange = {71-89},
+	caption = {[C\'odigo generador del Biplot.]
+	\lstcaption{C\'odigo generador del Biplot.}},
 	]{../python/src/featureselection.py}
 
 \end{document}
