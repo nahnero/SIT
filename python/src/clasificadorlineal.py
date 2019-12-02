@@ -1,4 +1,8 @@
 # Started Sun  1 Dec 21:59:45 2019 by nahnero. #
+"""
+Partitions data using train_test_split, trains an LDA & QDA model and
+validates using 'traditional' manual methods.
+"""
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -9,7 +13,7 @@ from preprocessing import  x_no, y_no, labels
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
-x_no = StandardScaler ().fit_transform (x_no) #  typify
+x_no = StandardScaler ().fit_transform (x_no) #  typify not necessary
 
 from sklearn.model_selection import train_test_split
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA

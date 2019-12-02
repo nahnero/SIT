@@ -18,3 +18,4 @@
 \contentsline {lstlisting}{\numberline {18}Validaci\'on seg\'un distintos m\'etodos.}{15}{lstlisting.18}% 
 \contentsline {lstlisting}{\numberline {19}Validaci\'on del modelo KNN.}{16}{lstlisting.19}% 
 \contentsline {lstlisting}{\numberline {20}Validaci\'on seg\'un distintos m\'etodos.}{16}{lstlisting.20}% 
+\contentsline {lstlisting}{\numberline {21}Evoluci\'on de puntuaci\'on seg\'un n\'umero de vecinos.}{17}{lstlisting.21}% 

@@ -1,4 +1,8 @@
 # Started Sun  1 Dec 21:59:45 2019 by nahnero. #
+"""
+Trains an LDA & QDA model and validates using automatic methods (Cross
+Validation, K Folds, Shuffle Split and Leave One Out).
+"""
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np

@@ -278,7 +278,7 @@ Sequential Backward Selection ('leptin', 'bmi', 'glucose', 'insulin')
 \subseccion{Clasificación Lineal}
 
 \lstinputlisting[
-	linerange = {14-33},
+	linerange = {19-36},
 	caption = {[Validaci\'on del modelo lineal.]
 	\lstcaption{Validaci\'on del modelo lineal.}},
 	]{../python/src/clasificadorlineal1.py}
@@ -296,7 +296,7 @@ Linear puntuacion LO media: 0.76 std: 0.43
 \newpage
 \subseccion{Clasificación Cuadrática}
 \lstinputlisting[
-	linerange = {36-54},
+	linerange = {40-58},
 	caption = {[Validaci\'on del modelo cuadr\'atico.]
 	\lstcaption{Validaci\'on del modelo cuadr\'atico.}},
 	]{../python/src/clasificadorlineal1.py}
@@ -313,11 +313,13 @@ Quadratic puntuacion LO media: 0.73 std: 0.44
 
 \newpage
 \subseccion{Clasificación KNN}
+
 \lstinputlisting[
-	linerange = {15-33},
+	linerange = {16-33},
 	caption = {[Validaci\'on del modelo KNN.]
 	\lstcaption{Validaci\'on del modelo KNN.}},
 	]{../python/src/clasificadorknn.py}
+
 \begin{lstlisting}[
 	caption = {[Validaci\'on seg\'un distintos m\'etodos.]
        {\lstcaption{Validaci\'on seg\'un distintos m\'etodos.}}},
@@ -327,5 +329,22 @@ KNN puntuacion KF media: 0.47 std: 0.15
 KNN puntuacion SS media: 0.47 std: 0.13
 KNN puntuacion LO media: 0.43 std: 0.50
 \end{lstlisting}
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.7\linewidth]{../python/images/knn.pdf}
+\figcaption{Rendimineto decreciente según aumenta el número de vecinos.}
+\label{fig:knn}
+\end{figure}
+
+\lstinputlisting[
+	linerange = {37-55},
+	caption = {[Evoluci\'on de puntuaci\'on seg\'un n\'umero de vecinos.]
+	\lstcaption{Evoluci\'on de puntuaci\'on seg\'un n\'umero de vecinos.}},
+	]{../python/src/clasificadorknn.py}
+
+
 
 \end{document}
