@@ -61,20 +61,18 @@
 \end{figure}
 
 \newpage
-\phantom{}
-\vfill
-\begin{figure}[h]
+
+\begin{figure}[h!]
 \phantomsection
 \label{figs}
 \listoffigures
 \end{figure}
-\vfill
-\begin{figure}[h]
+
+\begin{figure}[h!]
 \phantomsection
 \label{lsts}
 \lstlistoflistings
 \end{figure}
-\vfill
 
 \newpage
 
@@ -274,5 +272,43 @@ Sequential Backward Selection ('leptin', 'bmi', 'glucose', 'insulin')
 	caption = {[C\'odigo generador del Biplot.]
 	\lstcaption{C\'odigo generador del Biplot.}},
 	]{../python/src/featureselection.py}
+
+\seccion{Modelos de Clasificación}
+
+\subseccion{Clasificación Lineal}
+
+\lstinputlisting[
+	linerange = {14-33},
+	caption = {[Validaci\'on del modelo lineal.]
+	\lstcaption{Validaci\'on del modelo lineal.}},
+	]{../python/src/clasificadorlineal1.py}
+
+\begin{lstlisting}[
+	caption = {[Validaci\'on seg\'un distintos m\'etodos.]
+       {\lstcaption{Validaci\'on seg\'un distintos m\'etodos.}}},
+	]
+Linear error CV media: 0.25 std: 0.13
+Linear error KF media: 0.23 std: 0.15
+Linear error SS media: 0.24 std: 0.10
+Linear error LO media: 0.24 std: 0.43
+\end{lstlisting}
+
+\newpage
+\subseccion{Clasificación Cuadrática}
+\lstinputlisting[
+	linerange = {36-54},
+	caption = {[Validaci\'on del modelo cuadr\'atico.]
+	\lstcaption{Validaci\'on del modelo cuadr\'atico.}},
+	]{../python/src/clasificadorlineal1.py}
+
+\begin{lstlisting}[
+	caption = {[Validaci\'on seg\'un distintos m\'etodos.]
+       {\lstcaption{Validaci\'on seg\'un distintos m\'etodos.}}},
+	]
+Quadratic error CV media: 0.34 std: 0.19
+Quadratic error KF media: 0.28 std: 0.13
+Quadratic error SS media: 0.22 std: 0.15
+Quadratic error LO media: 0.27 std: 0.44
+\end{lstlisting}
 
 \end{document}

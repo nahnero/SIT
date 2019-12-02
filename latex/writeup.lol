@@ -12,3 +12,7 @@
 \contentsline {lstlisting}{\numberline {12}Varianza explicada por componente y suma acumulada.}{12}{lstlisting.12}% 
 \contentsline {lstlisting}{\numberline {13}C\'odigo generador del diagrama de Pareto}{12}{lstlisting.13}% 
 \contentsline {lstlisting}{\numberline {14}C\'odigo generador del Biplot.}{13}{lstlisting.14}% 
+\contentsline {lstlisting}{\numberline {15}Validaci\'on del modelo lineal.}{14}{lstlisting.15}% 
+\contentsline {lstlisting}{\numberline {16}Validaci\'on seg\'un distintos m\'etodos.}{14}{lstlisting.16}% 
+\contentsline {lstlisting}{\numberline {17}Validaci\'on del modelo cuadr\'atico.}{15}{lstlisting.17}% 
+\contentsline {lstlisting}{\numberline {18}Validaci\'on seg\'un distintos m\'etodos.}{15}{lstlisting.18}% 
