@@ -16,3 +16,5 @@
 \contentsline {lstlisting}{\numberline {16}Validaci\'on seg\'un distintos m\'etodos.}{14}{lstlisting.16}% 
 \contentsline {lstlisting}{\numberline {17}Validaci\'on del modelo cuadr\'atico.}{15}{lstlisting.17}% 
 \contentsline {lstlisting}{\numberline {18}Validaci\'on seg\'un distintos m\'etodos.}{15}{lstlisting.18}% 
+\contentsline {lstlisting}{\numberline {19}Validaci\'on del modelo KNN.}{16}{lstlisting.19}% 
+\contentsline {lstlisting}{\numberline {20}Validaci\'on seg\'un distintos m\'etodos.}{16}{lstlisting.20}% 

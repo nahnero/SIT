@@ -14,3 +14,4 @@
 \contentsline {section}{\numberline {10}{Modelos de Clasificaci\IeC {\'o}n}}{14}{section.10}% 
 \contentsline {subsection}{\numberline {10.1}{Clasificaci\IeC {\'o}n Lineal}}{14}{subsection.10.1}% 
 \contentsline {subsection}{\numberline {10.2}{Clasificaci\IeC {\'o}n Cuadr\IeC {\'a}tica}}{15}{subsection.10.2}% 
+\contentsline {subsection}{\numberline {10.3}{Clasificaci\IeC {\'o}n KNN}}{16}{subsection.10.3}% 
