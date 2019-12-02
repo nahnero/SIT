@@ -15,20 +15,20 @@ from sklearn.model_selection import cross_val_score, KFold, ShuffleSplit, LeaveO
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis as LDA
 
 lda = LDA ()
-error = 1 - cross_val_score (lda, x, y, cv = 10)
-print ('Linear error CV media: %.2f std: %.2f'
+error = cross_val_score (lda, x, y, cv = 10)
+print ('Linear puntuación CV media: %.2f std: %.2f'
         %(np.mean (error), np.std (error)))
 
-error = 1 - cross_val_score (lda, x, y, cv = KFold (n_splits = 10, shuffle = True))
-print ('Linear error KF media: %.2f std: %.2f'
+error = cross_val_score (lda, x, y, cv = KFold (n_splits = 10, shuffle = True))
+print ('Linear puntuación KF media: %.2f std: %.2f'
         %(np.mean (error), np.std (error)))
 
-error = 1 - cross_val_score (lda, x, y, cv = ShuffleSplit (n_splits = 10))
-print ('Linear error SS media: %.2f std: %.2f'
+error = cross_val_score (lda, x, y, cv = ShuffleSplit (n_splits = 10))
+print ('Linear puntuación SS media: %.2f std: %.2f'
         %(np.mean (error), np.std (error)))
 
-error = 1 - cross_val_score (lda, x, y, cv = LeaveOneOut ())
-print ('Linear error LO media: %.2f std: %.2f'
+error = cross_val_score (lda, x, y, cv = LeaveOneOut ())
+print ('Linear puntuación LO media: %.2f std: %.2f'
         %(np.mean (error), np.std (error)))
 
 print ()
@@ -36,19 +36,19 @@ print ()
 from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis as QDA
 
 qda = QDA ()
-error = 1 - cross_val_score (qda, x, y, cv = 10)
-print ('Quadratic error CV media: %.2f std: %.2f'
+error = cross_val_score (qda, x, y, cv = 10)
+print ('Quadratic puntuación CV media: %.2f std: %.2f'
         %(np.mean (error), np.std (error)))
 
-error = 1 - cross_val_score (qda, x, y, cv = KFold (n_splits = 10, shuffle = True))
-print ('Quadratic error KF media: %.2f std: %.2f'
+error = cross_val_score (qda, x, y, cv = KFold (n_splits = 10, shuffle = True))
+print ('Quadratic puntuación KF media: %.2f std: %.2f'
         %(np.mean (error), np.std (error)))
 
-error = 1 - cross_val_score (qda, x, y, cv = ShuffleSplit (n_splits = 10))
-print ('Quadratic error SS media: %.2f std: %.2f'
+error = cross_val_score (qda, x, y, cv = ShuffleSplit (n_splits = 10))
+print ('Quadratic puntuación SS media: %.2f std: %.2f'
         %(np.mean (error), np.std (error)))
 
-error =  (1 - cross_val_score (qda, x, y, cv = LeaveOneOut ()))
-print ('Quadratic error LO media: %.2f std: %.2f'
+error = cross_val_score (qda, x, y, cv = LeaveOneOut ())
+print ('Quadratic puntuación LO media: %.2f std: %.2f'
         %(np.mean (error), np.std (error)))
 
