@@ -1,11 +1,12 @@
 \babel@toc {nil}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces Histogramas para datos con y sin anomalias.}}{5}{figure.1}% 
-\contentsline {figure}{\numberline {2}{\ignorespaces Kernel Density para datos con y sin anomalias.}}{6}{figure.2}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces Boxplots Python para datos con y sin anomalias.}}{7}{figure.3}% 
-\contentsline {figure}{\numberline {4}{\ignorespaces Boxplots R para datos con anomalias.}}{8}{figure.4}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces QQplots para datos con y sin anomalias.}}{9}{figure.5}% 
-\contentsline {figure}{\numberline {6}{\ignorespaces Corrplot para datos con anomalias.}}{10}{figure.6}% 
-\contentsline {figure}{\numberline {7}{\ignorespaces Corrplot para datos sin anomalias.}}{11}{figure.7}% 
-\contentsline {figure}{\numberline {8}{\ignorespaces Diagrama de Pareto.}}{14}{figure.8}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces Biplot.}}{15}{figure.9}% 
-\contentsline {figure}{\numberline {10}{\ignorespaces Rendimineto decreciente seg\IeC {\'u}n aumenta el n\IeC {\'u}mero de vecinos.}}{19}{figure.10}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Histogramas Python para datos con y sin anomalias.}}{5}{figure.1}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Histogramas R para datos con anomalias.}}{6}{figure.2}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Kernel Density para datos con y sin anomalias.}}{7}{figure.3}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Boxplots Python para datos con y sin anomalias.}}{8}{figure.4}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Boxplots R para datos con anomalias.}}{9}{figure.5}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces QQplots para datos con y sin anomalias.}}{10}{figure.6}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Corrplot para datos con anomalias.}}{11}{figure.7}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Corrplot para datos sin anomalias.}}{12}{figure.8}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Diagrama de Pareto.}}{15}{figure.9}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Biplot.}}{16}{figure.10}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Rendimineto decreciente seg\IeC {\'u}n aumenta el n\IeC {\'u}mero de vecinos.}}{20}{figure.11}% 

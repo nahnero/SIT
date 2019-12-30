@@ -2,16 +2,16 @@
 \textbf {Secci\IeC {\'o}n}~\hfill \textbf {P\IeC {\'a}gina}\par 
 \contentsline {section}{\numberline {1}{Pre\IeC {\'a}mbulo}}{4}{section.1}% 
 \contentsline {section}{\numberline {2}{Histogramas}}{5}{section.2}% 
-\contentsline {section}{\numberline {3}{Kernel Density}}{6}{section.3}% 
-\contentsline {section}{\numberline {4}{Boxplot}}{7}{section.4}% 
-\contentsline {section}{\numberline {5}{QQplot}}{9}{section.5}% 
-\contentsline {section}{\numberline {6}{Corrplot}}{10}{section.6}% 
-\contentsline {section}{\numberline {7}{Filter Methods}}{12}{section.7}% 
-\contentsline {section}{\numberline {8}{Wrapper Methods}}{13}{section.8}% 
-\contentsline {section}{\numberline {9}{PCA}}{14}{section.9}% 
-\contentsline {subsection}{\numberline {9.1}{Pareto}}{14}{subsection.9.1}% 
-\contentsline {subsection}{\numberline {9.2}{Biplot}}{15}{subsection.9.2}% 
-\contentsline {section}{\numberline {10}{Modelos de Clasificaci\IeC {\'o}n}}{16}{section.10}% 
-\contentsline {subsection}{\numberline {10.1}{Clasificaci\IeC {\'o}n Lineal}}{16}{subsection.10.1}% 
-\contentsline {subsection}{\numberline {10.2}{Clasificaci\IeC {\'o}n Cuadr\IeC {\'a}tica}}{17}{subsection.10.2}% 
-\contentsline {subsection}{\numberline {10.3}{Clasificaci\IeC {\'o}n KNN}}{18}{subsection.10.3}% 
+\contentsline {section}{\numberline {3}{Kernel Density}}{7}{section.3}% 
+\contentsline {section}{\numberline {4}{Boxplot}}{8}{section.4}% 
+\contentsline {section}{\numberline {5}{QQplot}}{10}{section.5}% 
+\contentsline {section}{\numberline {6}{Corrplot}}{11}{section.6}% 
+\contentsline {section}{\numberline {7}{Filter Methods}}{13}{section.7}% 
+\contentsline {section}{\numberline {8}{Wrapper Methods}}{14}{section.8}% 
+\contentsline {section}{\numberline {9}{PCA}}{15}{section.9}% 
+\contentsline {subsection}{\numberline {9.1}{Pareto}}{15}{subsection.9.1}% 
+\contentsline {subsection}{\numberline {9.2}{Biplot}}{16}{subsection.9.2}% 
+\contentsline {section}{\numberline {10}{Modelos de Clasificaci\IeC {\'o}n}}{17}{section.10}% 
+\contentsline {subsection}{\numberline {10.1}{Clasificaci\IeC {\'o}n Lineal}}{17}{subsection.10.1}% 
+\contentsline {subsection}{\numberline {10.2}{Clasificaci\IeC {\'o}n Cuadr\IeC {\'a}tica}}{18}{subsection.10.2}% 
+\contentsline {subsection}{\numberline {10.3}{Clasificaci\IeC {\'o}n KNN}}{19}{subsection.10.3}% 
