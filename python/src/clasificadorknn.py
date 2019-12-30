@@ -15,21 +15,21 @@ from sklearn.model_selection import cross_val_score, KFold, ShuffleSplit, LeaveO
 from sklearn.neighbors import KNeighborsClassifier
 
 knn = KNeighborsClassifier (n_neighbors = 9)
-error = cross_val_score (knn, x, y, cv = 10)
+score = cross_val_score (knn, x, y, cv = 10)
 print ('KNN puntuación CV media: %.2f std: %.2f'
-        %(np.mean (error), np.std (error)))
+        %(np.mean (score), np.std (score)))
 
-error = cross_val_score (knn, x, y, cv = KFold (n_splits = 10, shuffle = True))
+score = cross_val_score (knn, x, y, cv = KFold (n_splits = 10, shuffle = True))
 print ('KNN puntuación KF media: %.2f std: %.2f'
-        %(np.mean (error), np.std (error)))
+        %(np.mean (score), np.std (score)))
 
-error = cross_val_score (knn, x, y, cv = ShuffleSplit (n_splits = 10))
+score = cross_val_score (knn, x, y, cv = ShuffleSplit (n_splits = 10))
 print ('KNN puntuación SS media: %.2f std: %.2f'
-        %(np.mean (error), np.std (error)))
+        %(np.mean (score), np.std (score)))
 
-error = cross_val_score (knn, x, y, cv = LeaveOneOut ())
+score = cross_val_score (knn, x, y, cv = LeaveOneOut ())
 print ('KNN puntuación LO media: %.2f std: %.2f'
-        %(np.mean (error), np.std (error)))
+        %(np.mean (score), np.std (score)))
 
 from sklearn.model_selection import train_test_split
 
@@ -41,7 +41,7 @@ for i in range (2,vecinos):
     error =  [None]*iteraciones
     for j in range (0, iteraciones):
         X_train, X_test, y_train, y_test = train_test_split (x, y, test_size = 0.3)
-        knn = KNeighborsClassifier (n_neighbors = i)
+        knn = KNeighborsClassifier (n_neighbors = i, n_jobs = -1)
         knn.fit (X_train, y_train)
         error[j] = np.sum (abs (knn.predict (X_test) - y_test))/ len (y_test)
     score[i] = np.mean (error)
@@ -49,6 +49,8 @@ for i in range (2,vecinos):
 plt.plot (range (2, vecinos+2), score)
 
 plt.suptitle ('Puntuación vs. Vecinos', fontsize = 10)
-plt.xlabel ('Vecinos')
-plt.ylabel ('Puntuación')
-plt.savefig  ('../images/knn.pdf', bbox_inches = 'tight', pad_inches = 0)
+plt.suptitle ('puntuación vs. vecinos', fontsize = 10)
+plt.xlabel ('vecinos')
+plt.ylabel ('puntuación')
+plt.show ()
+#  plt.savefig  ('../images/knn.pdf', bbox_inches = 'tight', pad_inches = 0)
