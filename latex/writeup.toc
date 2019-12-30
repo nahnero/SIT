@@ -6,12 +6,12 @@
 \contentsline {section}{\numberline {4}{Boxplot}}{9}{section.4}% 
 \contentsline {section}{\numberline {5}{QQplot}}{11}{section.5}% 
 \contentsline {section}{\numberline {6}{Corrplot}}{13}{section.6}% 
-\contentsline {section}{\numberline {7}{Filter Methods}}{15}{section.7}% 
-\contentsline {section}{\numberline {8}{Wrapper Methods}}{16}{section.8}% 
-\contentsline {section}{\numberline {9}{PCA}}{17}{section.9}% 
-\contentsline {subsection}{\numberline {9.1}{Pareto}}{17}{subsection.9.1}% 
-\contentsline {subsection}{\numberline {9.2}{Biplot}}{18}{subsection.9.2}% 
-\contentsline {section}{\numberline {10}{Modelos de Clasificaci\IeC {\'o}n}}{19}{section.10}% 
-\contentsline {subsection}{\numberline {10.1}{Clasificaci\IeC {\'o}n Lineal}}{19}{subsection.10.1}% 
-\contentsline {subsection}{\numberline {10.2}{Clasificaci\IeC {\'o}n Cuadr\IeC {\'a}tica}}{20}{subsection.10.2}% 
-\contentsline {subsection}{\numberline {10.3}{Clasificaci\IeC {\'o}n KNN}}{21}{subsection.10.3}% 
+\contentsline {section}{\numberline {7}{Filter Methods}}{17}{section.7}% 
+\contentsline {section}{\numberline {8}{Wrapper Methods}}{18}{section.8}% 
+\contentsline {section}{\numberline {9}{PCA}}{19}{section.9}% 
+\contentsline {subsection}{\numberline {9.1}{Pareto}}{19}{subsection.9.1}% 
+\contentsline {subsection}{\numberline {9.2}{Biplot}}{20}{subsection.9.2}% 
+\contentsline {section}{\numberline {10}{Modelos de Clasificaci\IeC {\'o}n}}{21}{section.10}% 
+\contentsline {subsection}{\numberline {10.1}{Clasificaci\IeC {\'o}n Lineal}}{21}{subsection.10.1}% 
+\contentsline {subsection}{\numberline {10.2}{Clasificaci\IeC {\'o}n Cuadr\IeC {\'a}tica}}{22}{subsection.10.2}% 
+\contentsline {subsection}{\numberline {10.3}{Clasificaci\IeC {\'o}n KNN}}{23}{subsection.10.3}% 

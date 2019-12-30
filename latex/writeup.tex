@@ -254,7 +254,7 @@ En este apartado dibujamos los histogramas comparativos.
 \begin{figure}[h]
 \centering
 \includegraphics[width = \linewidth]{../python/images/corrp.pdf}
-\figcaption{Corrplot para datos con anomalias.}
+\figcaption{Corrplot Python para datos con anomalias.}
 \label{fig:cps}
 \end{figure}
 \vfill
@@ -280,6 +280,29 @@ En este apartado dibujamos los histogramas comparativos.
 \vfill
 
 \newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{../R/images/corrplot.pdf}
+\figcaption{Corrplot R para datos con anomalias.}
+\label{fig:corrR}
+\end{figure}
+
+\lstinputlisting[
+	linerange = {6-14},
+	caption = {[C\'odigo R generador de los corrplots.]
+	\lstcaption{C\'odigo R generador de los corrplots.}},
+	]{../R/src/corrplot.r}
+
+\newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{../R/images/corrplot1.pdf}
+\figcaption{Matriz de correlaciones en R.}
+\label{fig:corrR1}
+\end{figure}
+
+\newpage
+
 \seccion{Filter Methods}
 
 \lstinputlisting[
