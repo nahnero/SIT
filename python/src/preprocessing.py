@@ -13,7 +13,7 @@ labels = ['age', 'leptin', 'bmi', 'adiponectin', 'glucose',
         'resistin', 'insulin', 'MCP1', 'HOMA']
 
 #  loads data
-data = np.loadtxt (open (r'../../data.csv', 'rb'), delimiter = ',')
+data = np.loadtxt (open (r'../../data.csv', 'rb'), delimiter = ',', skiprows = 1)
 
 #  rewrites $\color[HTML]{000000}\text{data}$ as all the rows of $\color[HTML]{000000}\text{data}$ w/out nan cells
 data = data [~np.isnan (data).any (axis=1)]

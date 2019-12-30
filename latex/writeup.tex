@@ -75,8 +75,8 @@
 \end{figure}
 
 \newpage
-
 \phantom{}
+\newpage
 \seccion{Preámbulo}
 \vfill
 \lstinputlisting[
@@ -101,8 +101,8 @@ En este apartado dibujamos los histogramas comparativos.
 
 \lstinputlisting[
 	linerange = {9-30},
-	caption = {[C\'odigo generador de los histogramas con datos an\'omalos.]
-	\lstcaption{C\'odigo generador de los histogramas con datos an\'omalos.}},
+	caption = {[C\'odigo Python generador de los histogramas con datos an\'omalos.]
+	\lstcaption{C\'odigo Python generador de los histogramas con datos an\'omalos.}},
 	]{../python/src/histograms.py}
 
 \seccion{Kernel Density}
@@ -117,8 +117,8 @@ En este apartado dibujamos los histogramas comparativos.
 
 \lstinputlisting[
 	linerange = {9-32},
-	caption = {[C\'odigo generador de los kernel density plots con datos an\'omalos.]
-	\lstcaption{C\'odigo generador de los kernel density plots con datos an\'omalos.}},
+	caption = {[C\'odigo Python generador de los kernel density plots con datos an\'omalos.]
+	\lstcaption{C\'odigo Python generador de los kernel density plots con datos an\'omalos.}},
 	]{../python/src/kerneldensity.py}
 
 \seccion{Boxplot}
@@ -127,15 +127,39 @@ En este apartado dibujamos los histogramas comparativos.
 \centering
 \includegraphics[width = 0.49\linewidth]{../python/images/boxp.pdf}
 \includegraphics[width = 0.49\linewidth]{../python/images/boxp1.pdf}
-\figcaption{Boxplots para datos con y sin anomalias.}
-\label{fig:boxps}
+\figcaption{Boxplots Python para datos con y sin anomalias.}
+\label{fig:boxP}
 \end{figure}
 
 \lstinputlisting[
 	linerange = {9-24},
-	caption = {[C\'odigo generador de los boxplots con datos an\'omalos.]
-	\lstcaption{C\'odigo generador de los boxplots con datos an\'omalos.}},
+	caption = {[C\'odigo Python generador de los boxplots con datos an\'omalos.]
+	\lstcaption{C\'odigo Python generador de los boxplots con datos an\'omalos.}},
 	]{../python/src/boxplot.py}
+
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.4\linewidth]{../R/images/box1.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box2.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box3.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box4.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box5.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box6.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box7.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box8.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box9.pdf}
+\includegraphics[width = 0.4\linewidth]{../R/images/box10.pdf}
+\figcaption{Boxplots R para datos con anomalias.}
+\label{fig:boxR}
+\end{figure}
+
+\lstinputlisting[
+	linerange = {8-18},
+	caption = {[C\'odigo R generador de los boxplots con datos an\'omalos.]
+	\lstcaption{C\'odigo R generador de los boxplots con datos an\'omalos.}},
+	]{../R/src/boxplot.r}
 
 \newpage
 \seccion{QQplot}
