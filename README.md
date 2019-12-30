@@ -15,3 +15,8 @@ up in the writeup document, it will also update automatically (same with images)
 	* **src** : source code, it produces (mainly) graphs and plots,
  which are to be saved as *pdfs* in the **images** folder.
 	* **images** : graphs produced by src.
+
+* **R**
+	* **src** : source code, it produces (mainly) graphs and plots,
+ which are to be saved as *pdfs* in the **images** folder.
+	* **images** : graphs produced by src.
