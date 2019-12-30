@@ -6,8 +6,9 @@
 \contentsline {figure}{\numberline {5}{\ignorespaces Boxplots Python para datos con y sin anomalias.}}{9}{figure.5}% 
 \contentsline {figure}{\numberline {6}{\ignorespaces Boxplots R para datos con anomalias.}}{10}{figure.6}% 
 \contentsline {figure}{\numberline {7}{\ignorespaces QQplots para datos con y sin anomalias.}}{11}{figure.7}% 
-\contentsline {figure}{\numberline {8}{\ignorespaces Corrplot para datos con anomalias.}}{12}{figure.8}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces Corrplot para datos sin anomalias.}}{13}{figure.9}% 
-\contentsline {figure}{\numberline {10}{\ignorespaces Diagrama de Pareto.}}{16}{figure.10}% 
-\contentsline {figure}{\numberline {11}{\ignorespaces Biplot.}}{17}{figure.11}% 
-\contentsline {figure}{\numberline {12}{\ignorespaces Rendimineto decreciente seg\IeC {\'u}n aumenta el n\IeC {\'u}mero de vecinos.}}{21}{figure.12}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Gr\'aficos cuantil - cuantil R.}}{12}{figure.8}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Corrplot para datos con anomalias.}}{13}{figure.9}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Corrplot para datos sin anomalias.}}{14}{figure.10}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Diagrama de Pareto.}}{17}{figure.11}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Biplot.}}{18}{figure.12}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces Rendimineto decreciente seg\IeC {\'u}n aumenta el n\IeC {\'u}mero de vecinos.}}{22}{figure.13}% 
