@@ -322,6 +322,51 @@ En este apartado dibujamos los histogramas comparativos.
 \end{lstlisting}
 
 \newpage
+\begin{lstlisting}[
+	caption =  {[Ranking de variables seg\'un distintos m\'etodos en R.]
+	{\lstcaption{Ranking de variables seg\'un distintos m\'etodos en R.}}},
+	]
+# Fscore
+>library (PredPsych)
+> rank (fscore (datos, 10, 1:9))
+#  age  leptin  bmi adiponectin  glucose  resistin  insulin MCP1  HOMA
+#    3       5    9           7        8         2        1    6     4
+
+# Relieff
+> library (CORElearn)
+> rank (attrEval (as.factor (clase)~., datos, 'Relief'))
+#  age  leptin  bmi adiponectin  glucose  resistin  insulin  MCP1  HOMA
+#    9       7    8           2        4         5        1     6     3
+
+# Algunos de los posibles metodos
+for (i in infoCore (what = "attrEval")){
+    cat (i, '\r\t\t', unname (rank (attrEval (as.factor (clase)~., datos, i))),'\n')
+}
+# ReliefFequalK    9 3 8 4 6 5 2 7 1
+# ReliefFexpRank   8 5 9 3 6 4 1 7 2
+# ReliefFbestK     9 7 8 3 4 5 1 6 2
+# Relief           9 7 8 2 4 5 1 6 3
+# InfGain          7 4 9 5 8 2 1 6 3
+# GainRatio        9 2 8 7 6 4.5 1 3 4.5
+# MDL              7 4 9 5 8 3 1 6 2
+# Gini             7 4 9 5 8 3 1 6 2
+# MyopicReliefF    6 4 9 5 7 3 1 8 2
+# Accuracy         6 4 9 5 7 3 1.5 8 1.5
+# ReliefFmerit     8 3 9 5 6 4 1 7 2
+# ReliefFdistance  8 4 9 5 6 3 1 7 2
+# ReliefFsqrDistan 8 4 9 5 6 3 1 7 2
+# DKM              7 3 9 6 8 2 1 5 4
+# ReliefFexpC      8 5 9 3 6 4 1 7 2
+# ReliefFavgC      8 5 9 3 6 4 1 7 2
+# ReliefFpe        8 5 9 3 6 4 1 7 2
+# ReliefFpa        8 5 9 3 6 4 1 7 2
+# ReliefFsmp       8 5 9 3 6 4 1 7 2
+# GainRatioCost    9 2 8 7 6 4.5 1 3 4.5
+# DKMcost          7 4 9 5 8 3 2 6 1
+# 		.  .  .
+\end{lstlisting}
+
+\newpage
 \seccion{Wrapper Methods}
 
 \lstinputlisting[

@@ -11,16 +11,17 @@
 \contentsline {lstlisting}{\numberline {11}C\'odigo R generador de los corrplots.}{15}{lstlisting.11}% 
 \contentsline {lstlisting}{\numberline {12}Aplicaci\'on m\'etodos \textit {filter} de selecci\'on caracter\'isticas.}{17}{lstlisting.12}% 
 \contentsline {lstlisting}{\numberline {13}Ranking de variables seg\'un los m\'etodos filter.}{17}{lstlisting.13}% 
-\contentsline {lstlisting}{\numberline {14}Aplicaci\'on m\'etodos \textit {wrapper} de selecci\'on caracter\'isticas.}{18}{lstlisting.14}% 
-\contentsline {lstlisting}{\numberline {15}Resultados del filtrado mediante wrappers.}{18}{lstlisting.15}% 
-\contentsline {lstlisting}{\numberline {16}\textit {Principal Component Analysis}}{19}{lstlisting.16}% 
-\contentsline {lstlisting}{\numberline {17}Varianza explicada por componente y suma acumulada.}{19}{lstlisting.17}% 
-\contentsline {lstlisting}{\numberline {18}C\'odigo generador del diagrama de Pareto}{19}{lstlisting.18}% 
-\contentsline {lstlisting}{\numberline {19}C\'odigo generador del Biplot.}{20}{lstlisting.19}% 
-\contentsline {lstlisting}{\numberline {20}Validaci\'on del modelo lineal.}{21}{lstlisting.20}% 
-\contentsline {lstlisting}{\numberline {21}Validaci\'on seg\'un distintos m\'etodos.}{21}{lstlisting.21}% 
-\contentsline {lstlisting}{\numberline {22}Validaci\'on del modelo cuadr\'atico.}{22}{lstlisting.22}% 
-\contentsline {lstlisting}{\numberline {23}Validaci\'on seg\'un distintos m\'etodos.}{22}{lstlisting.23}% 
-\contentsline {lstlisting}{\numberline {24}Validaci\'on del modelo KNN.}{23}{lstlisting.24}% 
-\contentsline {lstlisting}{\numberline {25}Validaci\'on seg\'un distintos m\'etodos.}{23}{lstlisting.25}% 
-\contentsline {lstlisting}{\numberline {26}Evoluci\'on de puntuaci\'on seg\'un n\'umero de vecinos.}{24}{lstlisting.26}% 
+\contentsline {lstlisting}{\numberline {14}Ranking de variables seg\'un distintos m\'etodos en R.}{18}{lstlisting.14}% 
+\contentsline {lstlisting}{\numberline {15}Aplicaci\'on m\'etodos \textit {wrapper} de selecci\'on caracter\'isticas.}{19}{lstlisting.15}% 
+\contentsline {lstlisting}{\numberline {16}Resultados del filtrado mediante wrappers.}{19}{lstlisting.16}% 
+\contentsline {lstlisting}{\numberline {17}\textit {Principal Component Analysis}}{20}{lstlisting.17}% 
+\contentsline {lstlisting}{\numberline {18}Varianza explicada por componente y suma acumulada.}{20}{lstlisting.18}% 
+\contentsline {lstlisting}{\numberline {19}C\'odigo generador del diagrama de Pareto}{20}{lstlisting.19}% 
+\contentsline {lstlisting}{\numberline {20}C\'odigo generador del Biplot.}{21}{lstlisting.20}% 
+\contentsline {lstlisting}{\numberline {21}Validaci\'on del modelo lineal.}{22}{lstlisting.21}% 
+\contentsline {lstlisting}{\numberline {22}Validaci\'on seg\'un distintos m\'etodos.}{22}{lstlisting.22}% 
+\contentsline {lstlisting}{\numberline {23}Validaci\'on del modelo cuadr\'atico.}{23}{lstlisting.23}% 
+\contentsline {lstlisting}{\numberline {24}Validaci\'on seg\'un distintos m\'etodos.}{23}{lstlisting.24}% 
+\contentsline {lstlisting}{\numberline {25}Validaci\'on del modelo KNN.}{24}{lstlisting.25}% 
+\contentsline {lstlisting}{\numberline {26}Validaci\'on seg\'un distintos m\'etodos.}{24}{lstlisting.26}% 
+\contentsline {lstlisting}{\numberline {27}Evoluci\'on de puntuaci\'on seg\'un n\'umero de vecinos.}{25}{lstlisting.27}% 
