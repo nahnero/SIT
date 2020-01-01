@@ -2,9 +2,13 @@
 
 # load data
 datos <- read.table ('../../data.csv', sep = ',', header = T)
+datos <- na.omit (datos)
+suppressPackageStartupMessages (library (dplyr))
+datos <- datos %>% filter_all (all_vars (. <= quantile (., 0.99, na.rm = T)))
 
+library (car)
 pdf ("../images/corrplot.pdf")
-plot (datos)
+scatterplotMatrix (datos, regLine=list (col='red'), pch=20, cex=0.5, col='blue4')
 dev.off ()
 
 library (corrplot)

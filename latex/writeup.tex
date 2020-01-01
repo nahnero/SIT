@@ -288,7 +288,7 @@ En este apartado dibujamos los histogramas comparativos.
 \end{figure}
 
 \lstinputlisting[
-	linerange = {6-14},
+	linerange = {9-18},
 	caption = {[C\'odigo R generador de los corrplots.]
 	\lstcaption{C\'odigo R generador de los corrplots.}},
 	]{../R/src/corrplot.r}
@@ -415,9 +415,10 @@ sbs <- selectFeatures (
 \end{lstlisting}
 
 \begin{lstlisting}[
-	caption = {[M\'etodo Boruta \textit{wrapper} de Random Forest R.]
+	caption =   {[M\'etodo Boruta \textit{wrapper} de Random Forest R.]
 	{\lstcaption{M\'etodo Boruta \textit{wrapper} de Random Forest R.}}},
 	]
+# esto es extra
 library (Boruta)
 Boruta (as.factor (clase)~., datos, maxRuns = 101) -> borutaout
 
