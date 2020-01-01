@@ -83,8 +83,8 @@ def biplot(score,coeff,pcax,pcay,labels=None):
     plt.xlim(-1,1); plt.ylim(-1,1)
     plt.xlabel("PC{}".format(pcax)); plt.ylabel("PC{}".format(pcay))
     return plt
-bp = biplot (pca.fit_transform (x_no), pca.components_,1,2)
-bp.suptitle ('Biplot', fontsize = 20)
+bp = biplot (pca.fit_transform (x_no), pca.components_,1,2, labels = labels)
+bp.suptitle ('Biplot Python', fontsize = 14)
 bp.savefig  ('../images/biplotpca.pdf', bbox_inches = 'tight', pad_inches = 0)
 
 #  Pareto
@@ -94,5 +94,5 @@ ax.set_ylim (top=1)
 ax1 = ax.twinx ()
 ax1.set_ylim (top=100)
 ax1.plot (range (len (evr)), np.cumsum (evr)*100, marker = '.', color = 'red')
-fig.suptitle ('Pareto', fontsize = 20)
+fig.suptitle ('Pareto Python', fontsize = 16)
 fig.savefig  ('../images/pareto.pdf', bbox_inches = 'tight', pad_inches = 0)
