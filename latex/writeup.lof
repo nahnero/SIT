@@ -1,18 +1,18 @@
 \babel@toc {nil}{}
-\contentsline {figure}{\numberline {1}{\ignorespaces Histogramas Python para datos con y sin anomalias.}}{6}{figure.1}% 
-\contentsline {figure}{\numberline {2}{\ignorespaces Histogramas R para datos con anomalias.}}{7}{figure.2}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces Kernel Density para datos con y sin anomalias.}}{8}{figure.3}% 
-\contentsline {figure}{\numberline {4}{\ignorespaces Gr\'aficos de densidad R.}}{9}{figure.4}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces Boxplots Python para datos con y sin anomalias.}}{10}{figure.5}% 
-\contentsline {figure}{\numberline {6}{\ignorespaces Boxplots R para datos con anomalias.}}{11}{figure.6}% 
-\contentsline {figure}{\numberline {7}{\ignorespaces QQplots para datos con y sin anomalias.}}{12}{figure.7}% 
-\contentsline {figure}{\numberline {8}{\ignorespaces Gr\'aficos cuantil - cuantil R.}}{13}{figure.8}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces Corrplot Python para datos con anomalias.}}{14}{figure.9}% 
-\contentsline {figure}{\numberline {10}{\ignorespaces Corrplot para datos sin anomalias.}}{15}{figure.10}% 
-\contentsline {figure}{\numberline {11}{\ignorespaces Corrplot R para datos con anomalias.}}{16}{figure.11}% 
-\contentsline {figure}{\numberline {12}{\ignorespaces Matriz de correlaciones en R.}}{17}{figure.12}% 
-\contentsline {figure}{\numberline {13}{\ignorespaces Representaci\IeC {\'o}n gr\IeC {\'a}fica de la importancia de las variables seleccionadas por Boruta.}}{22}{figure.13}% 
-\contentsline {figure}{\numberline {14}{\ignorespaces Diagrama de Pareto en Python y R.}}{24}{figure.14}% 
-\contentsline {figure}{\numberline {15}{\ignorespaces Biplot Python.}}{25}{figure.15}% 
-\contentsline {figure}{\numberline {16}{\ignorespaces Biplot R.}}{26}{figure.16}% 
-\contentsline {figure}{\numberline {17}{\ignorespaces Rendimineto decreciente seg\IeC {\'u}n aumenta el n\IeC {\'u}mero de vecinos.}}{30}{figure.17}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Histogramas Python para datos con y sin anomalias.}}{5}{figure.1}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Histogramas R para datos con anomalias.}}{6}{figure.2}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Kernel Density para datos con y sin anomalias.}}{7}{figure.3}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Gr\'aficos de densidad R.}}{8}{figure.4}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Boxplots Python para datos con y sin anomalias.}}{9}{figure.5}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Boxplots R para datos con anomalias.}}{10}{figure.6}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces QQplots Python para datos con y sin anomalias.}}{11}{figure.7}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces QQplots R.}}{12}{figure.8}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Corrplot Python para datos con anomalias.}}{13}{figure.9}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Corrplot Python para datos sin anomalias.}}{14}{figure.10}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Corrplot R para datos con anomalias.}}{15}{figure.11}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Matriz de correlaciones en R.}}{16}{figure.12}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces Representaci\IeC {\'o}n gr\IeC {\'a}fica de la importancia de las variables seleccionadas por Boruta.}}{21}{figure.13}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Diagrama de Pareto en Python y R.}}{23}{figure.14}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Biplot Python.}}{24}{figure.15}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Biplot R.}}{25}{figure.16}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces Rendimineto decreciente seg\IeC {\'u}n aumenta el n\IeC {\'u}mero de vecinos.}}{29}{figure.17}% 

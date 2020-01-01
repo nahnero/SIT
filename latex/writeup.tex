@@ -67,25 +67,27 @@
 \label{figs}
 \listoffigures
 \end{figure}
-
+\newpage
 \begin{figure}[h!]
 \phantomsection
 \label{lsts}
 \lstlistoflistings
 \end{figure}
 
-\newpage
-\phantom{}
-\newpage
 \seccion{Preámbulo}
 \vfill
 \lstinputlisting[
 	linerange = {8-38},
-	caption = {[Importaciones iniciales y preparacion de datos.]
-	\lstcaption{Importaciones iniciales y preparacion de datos.}},
+	caption = {[Importaciones iniciales y preparacion de datos en Python.]
+	\lstcaption{Importaciones iniciales y preparacion de datos en Python.}},
 	]{../python/src/preprocessing.py}
 \vfill
-
+\lstinputlisting[
+	linerange = {2-8},
+	caption = {[Importaciones iniciales y preparacion de datos en R.]
+	\lstcaption{Importaciones iniciales y preparacion de datos en R.}},
+	]{../R/src/preprocessing.r}
+\vfill
 \newpage
 \seccion{Histogramas}
 
@@ -216,14 +218,14 @@ En este apartado dibujamos los histogramas comparativos.
 \centering
 \includegraphics[width = 0.49\linewidth]{../python/images/qqp.pdf}
 \includegraphics[width = 0.49\linewidth]{../python/images/qqp1.pdf}
-\figcaption{QQplots para datos con y sin anomalias.}
+\figcaption{QQplots Python para datos con y sin anomalias.}
 \label{fig:qqps}
 \end{figure}
 
 \lstinputlisting[
 	linerange = {9-28},
-	caption = {[C\'odigo generador de los QQplots con datos an\'omalos.]
-	\lstcaption{C\'odigo generador de los QQplots con datos an\'omalos.}},
+	caption = {[C\'odigo Python generador de los QQplots con datos an\'omalos.]
+	\lstcaption{C\'odigo Python generador de los QQplots con datos an\'omalos.}},
 	]{../python/src/qqplot.py}
 
 \newpage
@@ -239,7 +241,7 @@ En este apartado dibujamos los histogramas comparativos.
 \includegraphics[width = 0.4\linewidth]{../R/images/qq8.pdf}
 \includegraphics[width = 0.4\linewidth]{../R/images/qq9.pdf}
 \includegraphics[width = 0.4\linewidth]{../R/images/qq10.pdf}
-\figcaption{Gr\'aficos cuantil - cuantil R.}
+\figcaption{QQplots R.}
 \label{fig:densR}
 \end{figure}
 
@@ -260,8 +262,8 @@ En este apartado dibujamos los histogramas comparativos.
 \vfill
 \lstinputlisting[
 	linerange = {13-18},
-	caption = {[C\'odigo generador de los corrplots con datos an\'omalos.]
-	\lstcaption{C\'odigo generador de los corrplots con datos an\'omalos.}},
+	caption = {[C\'odigo Python generador de los corrplots con datos an\'omalos.]
+	\lstcaption{C\'odigo Python generador de los corrplots con datos an\'omalos.}},
 	]{../python/src/corrplot.py}
 \vfill
 
@@ -273,7 +275,7 @@ En este apartado dibujamos los histogramas comparativos.
 \begin{figure}[h!]
 \centering
 \includegraphics[width = \linewidth]{../python/images/corrp1.pdf}
-\figcaption{Corrplot para datos sin anomalias.}
+\figcaption{Corrplot Python para datos sin anomalias.}
 \label{fig:cp1s}
 \end{figure}
 
