@@ -68,24 +68,25 @@ print (evr)
 print (np.cumsum (evr))
 
 #  Biplot
-def biplot(score,coeff,pcax,pcay,labels=None):
-    pca1=pcax-1; pca2=pcay-1
-    xs = score[:,pca1]; ys = score[:,pca2]
-    n=score.shape[1]
-    scalex = 1.0/(xs.max()- xs.min()); scaley = 1.0/(ys.max()- ys.min())
-    plt.scatter(xs*scalex,ys*scaley)
+def biplot (score,coeff,labels=None):
+    """from https://ostwalprasad.github.io/machine-learning/PCA-using-python.html"""
+    xs = score[:,0]; ys = score[:,1]
+    n = coeff.shape[0]
+    scalex = 1.0/(xs.max() - xs.min())
+    scaley = 1.0/(ys.max() - ys.min())
+    plt.scatter(xs * scalex,ys * scaley,s=5)
+    plt.suptitle ('Biplot Python', fontsize = 16)
     for i in range(n):
-        plt.arrow(0, 0, coeff[i,pca1], coeff[i,pca2],color='r',alpha=0.5)
+        plt.arrow(0, 0, coeff[i,0], coeff[i,1],color='r',alpha=0.5, head_width=0.01)
         if labels is None:
-            plt.text(coeff[i,pca1]* 1.15, coeff[i,pca2] * 1.15, "Var"+str(i+1), color='g', ha='center', va='center')
+            plt.text(coeff[i,0]* 1.15, coeff[i,1] * 1.15, "Var"+str(i+1), color = 'green', ha = 'center', va = 'center')
         else:
-            plt.text(coeff[i,pca1]* 1.15, coeff[i,pca2] * 1.15, labels[i], color='g', ha='center', va='center')
-    plt.xlim(-1,1); plt.ylim(-1,1)
-    plt.xlabel("PC{}".format(pcax)); plt.ylabel("PC{}".format(pcay))
-    return plt
-bp = biplot (pca.fit_transform (x_no), pca.components_,1,2, labels = labels)
-bp.suptitle ('Biplot Python', fontsize = 14)
-bp.savefig  ('../images/biplotpca.pdf', bbox_inches = 'tight', pad_inches = 0)
+            plt.text(coeff[i,0]* 1.15, coeff[i,1] * 1.15, labels[i], color = 'g', ha = 'center', va = 'center')
+    plt.xlabel("PC{}".format(1)), plt.ylabel("PC{}".format(2))
+    plt.savefig  ('../images/biplotpca.pdf', bbox_inches = 'tight', pad_inches = 0)
+biplot (principalComponents[:,0:2], np.transpose(pca.components_[0:2, :]), labels)
+
+
 
 #  Pareto
 fig, ax = plt.subplots ()
