@@ -62,17 +62,10 @@
 
 \newpage
 
-\begin{figure}[h!]
-\phantomsection
-\label{figs}
+\phantomsection{}
 \listoffigures
-\end{figure}
-\newpage
-\begin{figure}[h!]
-\phantomsection
-\label{lsts}
 \lstlistoflistings
-\end{figure}
+\newpage
 
 \seccion{Preámbulo}
 \vfill
@@ -534,67 +527,137 @@ Cum. Var.       0.3393 0.5100 0.640 0.762 0.8428 0.9165 0.96525 0.99658 1.00000
 \seccion{Modelos de Clasificación}
 
 \subseccion{Clasificación Lineal}
-
+\vfill
 \lstinputlisting[
 	linerange = {19-36},
-	caption = {[Validaci\'on del modelo lineal.]
-	\lstcaption{Validaci\'on del modelo lineal.}},
+	caption = {[Python validaci\'on del modelo lineal.]
+	\lstcaption{Python validaci\'on del modelo lineal.}},
 	]{../python/src/clasificadorlineal1.py}
-
+\vfill
 \begin{lstlisting}[
-	caption = {[Validaci\'on seg\'un distintos m\'etodos.]
-       {\lstcaption{Validaci\'on seg\'un distintos m\'etodos.}}},
+	caption = {[Python validaci\'on seg\'un distintos m\'etodos de partici\'on.]
+       {\lstcaption{Python validaci\'on seg\'un distintos m\'etodos de partici\'on.}}},
 	]
 Linear puntuacion CV media: 0.75 std: 0.13
 Linear puntuacion KF media: 0.75 std: 0.10
 Linear puntuacion SS media: 0.71 std: 0.14
 Linear puntuacion LO media: 0.76 std: 0.43
 \end{lstlisting}
+\vfill
+
+\newpage
+
+\phantom{}
+\vfill
+\lstinputlisting[
+	linerange = {14-37},
+	mathescape=false,
+	caption = {[R an\'alisis lineal discriminante.]
+	\lstcaption{R an\'alisis lineal discriminante.}},
+	]{../R/src/clasificacion.r}
+\vfill
+\begin{lstlisting}[
+	caption = {[R puntuaci\'on de mil evaluaciones.]
+       {\lstcaption{R puntuaci\'on de mil evaluaciones.}}},
+	]
+ vars        n mean   sd median trimmed  mad  min  max range  skew
+ldascores    1 1000 0.72 0.08   0.73    0.72 0.10 0.47 0.97  0.50 -0.09
+\end{lstlisting}
+\vfill
 
 \newpage
 \subseccion{Clasificación Cuadrática}
+\vfill
 \lstinputlisting[
 	linerange = {40-58},
-	caption = {[Validaci\'on del modelo cuadr\'atico.]
-	\lstcaption{Validaci\'on del modelo cuadr\'atico.}},
+	caption = {[Python validaci\'on del modelo cuadr\'atico.]
+	\lstcaption{Python validaci\'on del modelo cuadr\'atico.}},
 	]{../python/src/clasificadorlineal1.py}
-
+\vfill
 \begin{lstlisting}[
-	caption = {[Validaci\'on seg\'un distintos m\'etodos.]
-       {\lstcaption{Validaci\'on seg\'un distintos m\'etodos.}}},
+	caption = {[Python validaci\'on seg\'un distintos m\'etodos de partici\'on.]
+       {\lstcaption{Python validaci\'on seg\'un distintos m\'etodos de partici\'on.}}},
 	]
 Quadratic puntuacion CV media: 0.66 std: 0.19
 Quadratic puntuacion KF media: 0.76 std: 0.09
 Quadratic puntuacion SS media: 0.76 std: 0.14
 Quadratic puntuacion LO media: 0.73 std: 0.44
 \end{lstlisting}
+\vfill
+\newpage
+\phantom{}
+\vfill
+\lstinputlisting[
+	linerange = {42-63},
+	mathescape=false,
+	caption = {[R an\'alisis cuadr\'atico discriminante.]
+	\lstcaption{R an\'alisis cuadr\'atico discriminante.}},
+	]{../R/src/clasificacion.r}
+\vfill
+\begin{lstlisting}[
+	caption = {[R puntuaci\'on de mil evaluaciones.]
+       {\lstcaption{R puntuaci\'on de mil evaluaciones.}}},
+	]
+ vars        n mean   sd median trimmed  mad  min  max range  skew
+qdascores    2 1000 0.69 0.07   0.70    0.69 0.10 0.43 0.87  0.43 -0.17
+\end{lstlisting}
+\vfill
 
 \newpage
 \subseccion{Clasificación KNN}
+\vfill
 
 \lstinputlisting[
 	linerange = {15-33},
-	caption = {[Validaci\'on del modelo KNN.]
-	\lstcaption{Validaci\'on del modelo KNN.}},
+	caption = {[Python validaci\'on del modelo KNN.]
+	\lstcaption{Python validaci\'on del modelo KNN.}},
 	]{../python/src/clasificadorknn.py}
 
+\vfill
 \begin{lstlisting}[
-	caption = {[Validaci\'on seg\'un distintos m\'etodos.]
-       {\lstcaption{Validaci\'on seg\'un distintos m\'etodos.}}},
+	caption = {[Python validaci\'on seg\'un distintos m\'etodos de partici\'on.]
+       {\lstcaption{Python validaci\'on seg\'un distintos m\'etodos de partici\'on.}}},
 	]
 KNN puntuacion CV media: 0.47 std: 0.12
 KNN puntuacion KF media: 0.47 std: 0.15
 KNN puntuacion SS media: 0.47 std: 0.13
 KNN puntuacion LO media: 0.43 std: 0.50
 \end{lstlisting}
+\vfill
 
 \newpage
+\phantom{}
+\vfill
+\lstinputlisting[
+	linerange = {66-89},
+	mathescape=false,
+	caption = {[R \textit{K nearest neighbours}.]
+	\lstcaption{R \textit{K nearest neighbours}.}},
+	]{../R/src/clasificacion.r}
+\vfill
+\begin{lstlisting}[
+	caption = {[R puntuaci\'on de mil evaluaciones.]
+       {\lstcaption{R puntuaci\'on de mil evaluaciones.}}},
+	]
+ vars        n mean   sd median trimmed  mad  min  max range  skew
+knnscores    3 1000 0.66 0.07   0.67    0.66 0.05 0.43 0.90  0.47 -0.07
+\end{lstlisting}
+\vfill
+\newpage
+
+\seccion{Postámbulo}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width = 0.7\linewidth]{../python/images/knn.pdf}
 \figcaption{Rendimineto decreciente según aumenta el número de vecinos.}
 \label{fig:knn}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.9\linewidth]{../R/images/scores.pdf}
+\figcaption{Comparación de mil evaluaciones de cada uno de los métodos de clasificación en R.}
 \end{figure}
 
 \lstinputlisting[

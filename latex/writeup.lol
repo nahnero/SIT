@@ -25,10 +25,16 @@
 \contentsline {lstlisting}{\numberline {25}C\'odigo generador del diagrama de Pareto en R.}{23}{lstlisting.25}% 
 \contentsline {lstlisting}{\numberline {26}C\'odigo generador del Biplot en Python.}{24}{lstlisting.26}% 
 \contentsline {lstlisting}{\numberline {27}C\'odigo generador del Biplot en R.}{25}{lstlisting.27}% 
-\contentsline {lstlisting}{\numberline {28}Validaci\'on del modelo lineal.}{26}{lstlisting.28}% 
-\contentsline {lstlisting}{\numberline {29}Validaci\'on seg\'un distintos m\'etodos.}{26}{lstlisting.29}% 
-\contentsline {lstlisting}{\numberline {30}Validaci\'on del modelo cuadr\'atico.}{27}{lstlisting.30}% 
-\contentsline {lstlisting}{\numberline {31}Validaci\'on seg\'un distintos m\'etodos.}{27}{lstlisting.31}% 
-\contentsline {lstlisting}{\numberline {32}Validaci\'on del modelo KNN.}{28}{lstlisting.32}% 
-\contentsline {lstlisting}{\numberline {33}Validaci\'on seg\'un distintos m\'etodos.}{28}{lstlisting.33}% 
-\contentsline {lstlisting}{\numberline {34}Evoluci\'on de puntuaci\'on seg\'un n\'umero de vecinos.}{29}{lstlisting.34}% 
+\contentsline {lstlisting}{\numberline {28}Python validaci\'on del modelo lineal.}{26}{lstlisting.28}% 
+\contentsline {lstlisting}{\numberline {29}Python validaci\'on seg\'un distintos m\'etodos de partici\'on.}{26}{lstlisting.29}% 
+\contentsline {lstlisting}{\numberline {30}R an\'alisis lineal discriminante.}{27}{lstlisting.30}% 
+\contentsline {lstlisting}{\numberline {31}R puntuaci\'on de mil evaluaciones.}{27}{lstlisting.31}% 
+\contentsline {lstlisting}{\numberline {32}Python validaci\'on del modelo cuadr\'atico.}{28}{lstlisting.32}% 
+\contentsline {lstlisting}{\numberline {33}Python validaci\'on seg\'un distintos m\'etodos de partici\'on.}{28}{lstlisting.33}% 
+\contentsline {lstlisting}{\numberline {34}R an\'alisis cuadr\'atico discriminante.}{29}{lstlisting.34}% 
+\contentsline {lstlisting}{\numberline {35}R puntuaci\'on de mil evaluaciones.}{29}{lstlisting.35}% 
+\contentsline {lstlisting}{\numberline {36}Python validaci\'on del modelo KNN.}{30}{lstlisting.36}% 
+\contentsline {lstlisting}{\numberline {37}Python validaci\'on seg\'un distintos m\'etodos de partici\'on.}{30}{lstlisting.37}% 
+\contentsline {lstlisting}{\numberline {38}R \textit {K nearest neighbours}.}{31}{lstlisting.38}% 
+\contentsline {lstlisting}{\numberline {39}R puntuaci\'on de mil evaluaciones.}{31}{lstlisting.39}% 
+\contentsline {lstlisting}{\numberline {40}Evoluci\'on de puntuaci\'on seg\'un n\'umero de vecinos.}{32}{lstlisting.40}% 
