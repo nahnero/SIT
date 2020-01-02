@@ -54,13 +54,9 @@
 }
 \maketitle{}
 
-\begin{figure}[h]
 \tableofcontents{}
 \addtocontents{toc}{\textbf{Sección}~\hfill\textbf{Página}\par}
 \label{fig:toc}
-\end{figure}
-
-\newpage
 
 \phantomsection{}
 \listoffigures
@@ -649,20 +645,24 @@ knnscores    3 1000 0.66 0.07   0.67    0.66 0.05 0.43 0.90  0.47 -0.07
 \end{lstlisting}
 \vfill
 \newpage
-
 \seccion{Postámbulo}
 
-\begin{figure}[h]
+\subseccion{Comparación \textit{LDA}, \textit{QDA}, \textit{KNN} R.}
+\vfill
+\begin{figure}[h!]
+\centering
+\includegraphics[width = 0.9\linewidth]{../R/images/scores.pdf}
+\figcaption{Comparación de mil evaluaciones de cada uno de los métodos de clasificación en R.}
+\end{figure}
+\vfill
+\newpage
+
+\subseccion{Puntuación \textit{knn} vs. número de vecinos.}
+\begin{figure}[h!]
 \centering
 \includegraphics[width = 0.7\linewidth]{../python/images/knn.pdf}
 \figcaption{Rendimineto decreciente según aumenta el número de vecinos.}
 \label{fig:knn}
-\end{figure}
-
-\begin{figure}[h]
-\centering
-\includegraphics[width = 0.9\linewidth]{../R/images/scores.pdf}
-\figcaption{Comparación de mil evaluaciones de cada uno de los métodos de clasificación en R.}
 \end{figure}
 
 \lstinputlisting[
@@ -671,6 +671,26 @@ knnscores    3 1000 0.66 0.07   0.67    0.66 0.05 0.43 0.90  0.47 -0.07
 	\lstcaption{Evoluci\'on de puntuaci\'on seg\'un n\'umero de vecinos.}},
 	]{../python/src/clasificadorknn.py}
 
+\newpage
+\subseccion{\textit{Benchmarking}}
+\lstinputlisting[
+	linerange = {10-46},
+	mathescape=false,
+	caption = {[C\'odigo R para evaluar el tiempo de ejecucci\'on.]
+	\lstcaption{C\'odigo R para evaluar el tiempo de ejecucci\'on.}},
+	]{../R/src/benchmarking.r}
+\newpage
+\begin{lstlisting}[
+	caption = {[Tiempo de ejecuci\'on en R.]
+       {\lstcaption{Tiempo de ejecuci\'on en R.}}},
+	]
+    test replications elapsed relative user.self sys.self
+1  1 load        1000   4.803    8.486     4.712    0.090
+2  2 part        1000  13.267   23.440    13.201    0.061
+3  3 lda         1000   3.359    5.935     3.346    0.013
+4  4 qda         1000   3.480    6.148     3.455    0.025
+5  5 knn         1000   0.566    1.000     0.562    0.004
+\end{lstlisting}
 
 
 \end{document}
