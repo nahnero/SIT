@@ -40,7 +40,7 @@ benchmark (
 	)
 	mean (prd == test.trans$clase)
 },
-replications = 100,
+replications = 1000,
 columns = c ("test", "replications", "elapsed",
             "relative", "user.self", "sys.self")
 )

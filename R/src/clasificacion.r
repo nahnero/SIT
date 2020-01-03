@@ -12,7 +12,7 @@ suppressPackageStartupMessages (library (caret))
 suppressPackageStartupMessages (library (MASS))
 
 # Linear Discriminant Analysis
-it <- 100
+it <- 1000
 ldascores <- rep (NA, times = it)
 p <- 0.7 # partition
 cat ('LDA\n')
