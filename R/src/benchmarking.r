@@ -4,32 +4,32 @@ suppressPackageStartupMessages (library (dplyr))
 suppressPackageStartupMessages (library (tidyverse))
 suppressPackageStartupMessages (library (caret))
 suppressPackageStartupMessages (library (MASS))
-suppressPackageStartupMessages (library (rbenchmark))
 suppressPackageStartupMessages (library (class))
+suppressPackageStartupMessages (library (rbenchmark))
 
 benchmark (
 '1 load'= {
 	datos <- read.table ('../../data.csv', sep = ',', header = T)
 	datos <- na.omit (datos)
-	datos <- datos %>% filter_all (all_vars (. <= quantile (., 0.99, na.rm = T)))
+	datos <- filter_all (datos, all_vars (. <= quantile (., 0.99, na.rm = T)))
 	p <- 0.7
 },
 '2 part'= {
-	train.samples <- datos$clase %>% createDataPartition (p = p, list = F)
+	train.samples <- createDataPartition (datos$clase, p = p, list = F)
 	train.data    <- datos[ train.samples,]
 	test.data     <- datos[-train.samples,]
-	preproc.param <- train.data %>% preProcess (method = c ("center", "scale"))
-	train.trans   <- preproc.param %>% predict (train.data)
-	test.trans    <- preproc.param %>% predict (test.data)
+	preproc.param <- preProcess (train.data, method = c ("center", "scale"))
+	train.trans   <- predict (preproc.param, train.data)
+	test.trans    <- predict (preproc.param, test.data)
 },
 '3 lda' = {
 	mdl <- lda (clase~., data = train.trans)
-	prd <- mdl %>%  predict (test.trans)
+	prd <- predict (mdl, test.trans)
 	mean (prd$class == test.trans$clase)
 },
 '4 qda' = {
 	mdl <- qda (clase~., data = train.trans)
-	prd <- mdl %>%  predict (test.trans)
+	prd <- predict (mdl, test.trans)
 	mean (prd$class == test.trans$clase)
 },
 '5 knn' = {
@@ -40,7 +40,7 @@ benchmark (
 	)
 	mean (prd == test.trans$clase)
 },
-replications = 1000,
+replications = 100,
 columns = c ("test", "replications", "elapsed",
             "relative", "user.self", "sys.self")
 )

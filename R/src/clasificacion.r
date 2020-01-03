@@ -5,32 +5,32 @@ datos <- na.omit (datos)
 
 # remove outliers
 suppressPackageStartupMessages (library (dplyr))
-datos <- datos %>% filter_all (all_vars (. <= quantile (., 0.99, na.rm = T)))
+datos <- filter_all (datos, all_vars (. <= quantile (., 0.99, na.rm = T)))
 
 suppressPackageStartupMessages (library (tidyverse))
 suppressPackageStartupMessages (library (caret))
 suppressPackageStartupMessages (library (MASS))
 
 # Linear Discriminant Analysis
-it <- 1000
+it <- 100
 ldascores <- rep (NA, times = it)
 p <- 0.7 # partition
 cat ('LDA\n')
 pb <- txtProgressBar (min = 0, max = it, initial = 0, char = '|', style = 3)
 for (i in 1:it){
-train.samples <- datos$clase %>% createDataPartition (p = p, list = F)
+train.samples <- createDataPartition (datos$clase, p = p, list = F)
 
 train.data    <- datos[ train.samples,]
 test.data     <- datos[-train.samples,]
 
-preproc.param <- train.data %>% preProcess (method = c ("center", "scale"))
+preproc.param <- preProcess (train.data, method = c ("center", "scale"))
 
-train.trans   <- preproc.param %>% predict (train.data)
-test.trans    <- preproc.param %>% predict (test.data)
+train.trans   <- predict (preproc.param, train.data)
+test.trans    <- predict (preproc.param, test.data)
 
 mdl <- lda (clase~., data = train.trans)
 
-prd <- mdl %>%  predict (test.trans)
+prd <- predict (mdl, test.trans)
 
 ldascores[i]  <- mean (prd$class == test.trans$clase)
 setTxtProgressBar (pb, i)
@@ -43,19 +43,19 @@ qdascores <- rep (NA, times = it)
 cat ('\nQDA\n')
 pb <- txtProgressBar (min = 0, max = it, initial = 0, char = '|', style = 3)
 for (i in 1:it){
-train.samples <- datos$clase %>% createDataPartition (p = p, list = F)
+train.samples <- createDataPartition (datos$clase, p = p, list = F)
 
 train.data    <- datos[ train.samples,]
 test.data     <- datos[-train.samples,]
 
-preproc.param <- train.data %>% preProcess (method = c ("center", "scale"))
+preproc.param <- preProcess (train.data, method = c ("center", "scale"))
 
-train.trans   <- preproc.param %>% predict (train.data)
-test.trans    <- preproc.param %>% predict (test.data)
+train.trans   <- predict (preproc.param, train.data)
+test.trans    <- predict (preproc.param, test.data)
 
 mdl <- qda (clase~., data = train.trans)
 
-prd <- mdl %>%  predict (test.trans)
+prd <- predict (mdl, test.trans)
 
 qdascores[i]  <- mean (prd$class == test.trans$clase)
 
@@ -68,15 +68,15 @@ library (class)
 cat ('\nKNN\n')
 pb <- txtProgressBar (min = 0, max = it, initial = 0, char = '|', style = 3)
 for (i in 1:it){
-train.samples <- datos$clase %>% createDataPartition (p = p, list = F)
+train.samples <- createDataPartition (datos$clase, p = p, list = F)
 
 train.data    <- datos[ train.samples,]
 test.data     <- datos[-train.samples,]
 
-preproc.param <- train.data %>% preProcess (method = c ("center", "scale"))
+preproc.param <- preProcess (train.data, method = c ("center", "scale"))
 
-train.trans   <- preproc.param %>% predict (train.data)
-test.trans    <- preproc.param %>% predict (test.data)
+train.trans   <- predict (preproc.param, train.data)
+test.trans    <- predict (preproc.param, test.data)
 
 prd <- knn (train = train.trans[1:9],
 	    cl    = train.trans$clase,
