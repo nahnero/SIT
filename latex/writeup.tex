@@ -680,6 +680,14 @@ knnscores    3 1000 0.66 0.07   0.67    0.66 0.05 0.43 0.90  0.47 -0.07
 	\lstcaption{C\'odigo R para evaluar el tiempo de ejecucci\'on.}},
 	]{../R/src/benchmarking.r}
 \newpage
+\lstinputlisting[
+	linerange = {12-43, 61-63},
+	mathescape=false,
+	caption = {[C\'odigo Python para evaluar el tiempo de ejecucci\'on.]
+	\lstcaption{C\'odigo Python para evaluar el tiempo de ejecucci\'on.}},
+	]{../python/src/benchmarking.py}
+
+\newpage
 \begin{lstlisting}[
 	caption = {[Tiempo de ejecuci\'on en R.]
        {\lstcaption{Tiempo de ejecuci\'on en R.}}},
@@ -690,6 +698,20 @@ knnscores    3 1000 0.66 0.07   0.67    0.66 0.05 0.43 0.90  0.47 -0.07
 3  3 lda         1000   3.359    5.935     3.346    0.013
 4  4 qda         1000   3.480    6.148     3.455    0.025
 5  5 knn         1000   0.566    1.000     0.562    0.004
+\end{lstlisting}
+
+\begin{lstlisting}[
+	caption = {[Tiempo de ejecuci\'on en Python.]
+       {\lstcaption{Tiempo de ejecuci\'on en Python.}}},
+	]
+'loa' ((), {}) 0.00376701354980468750 sec
+'par' ((), {}) 0.00057792663574218750 sec
+'lda' ((), {}) 0.00213122367858886719 sec
+'qda' ((), {}) 0.00131011009216308594 sec
+'lda' ((), {}) 0.00145196914672851562 sec
+Result: qda is 1.516303298299778 times faster than lda
+Result: qda is 2.87883278273268 times faster than knn
+Result: lda is 1.918905609112522 times faster than knn
 \end{lstlisting}
 
 
