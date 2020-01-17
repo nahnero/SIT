@@ -1225,6 +1225,60 @@ Memory: 7027MiB / 12288MiB
 Disk (/): 806G / 931G (87%)
 \end{lstlisting}
 
+
+\newpage
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[C\'odigo Matlab para medir los tiempos.]
+       {\lstcaption{C\'odigo Matlab para medir los tiempos.}}},
+	]
+tic
+load('Data.mat');
+dataR2mat = dataR2mat(~any(ismissing(dataR2),2),:);
+dataR2mat=dataR2mat(~any(isoutlier(dataR2mat(:,1:end-1)),2),:);
+datos = dataR2mat(:,1:end-1);
+clasificacion = dataR2mat(:,end);
+toc
+loa = toc;
+
+tic
+n = length(datos);
+p = 0.3;
+cvp = cvpartition(n,'HoldOut',p) ;
+tr_datos = datos(cvp.training);
+te_datos = datos(cvp.test);
+tr_class = clasificacion(cvp.training);
+te_class = clasificacion(cvp.test);
+toc
+par = toc;
+
+tic
+Mdl = fitcdiscr(tr_datos,tr_class, ...
+    'DiscrimType','linear');
+tr_predict = predict(Mdl,tr_datos);
+te_predict = predict(Mdl,te_datos);
+toc
+lda = toc;
+
+tic
+Mdq = fitcdiscr(tr_datos,tr_class, ...
+    'DiscrimType','quadratic');
+tr_predict = predict(Mdq,tr_datos);
+te_predict = predict(Mdq,te_datos);
+toc
+qda = toc;
+
+tic
+k = 1; %1, 45, r = sqrt(n)
+Mdk = fitcknn(tr_datos,tr_class, ...
+    'NumNeighbors',k);
+tr_predict = predict(Mdk,tr_datos);
+te_predict = predict(Mdk,te_datos);
+toc
+knn = toc;
+\end{lstlisting}
 \newpage
 \subseccion{Curva ROC}
 
@@ -1258,6 +1312,17 @@ Disk (/): 806G / 931G (87%)
 	caption = {[C\'odigo Matlab para generar la curva ROC y la AUC.]
        {\lstcaption{C\'odigo Matlab para generar la curva ROC y la AUC.}}},
 	]
+for i=1:p
+k = 1; %1, 45, r = sqrt(n)
+Mdk = fitcknn(datos(cvp.training(i)),clasificacion(cvp.training(i)), ...
+    'NumNeighbors',k);
+[labelK,score,cost] = predict(Mdk,datos(cvp.test(i)));
+dif = abs(labelK-clasificacion(cvp.test(i)));
+errores = sum(dif==1); % si la diferencia es de 1 nos hemos equivocado
+aciertos = sum(dif==0); % si la diferencia es de 0 hemos acertado
+PaciertosK = (aciertos/(aciertos+errores))*100;
+Paciertos=[Paciertos PaciertosK];
+
 [FP,VP] = perfcurve(labelK, clasificacion(cvp.test(i)), '1');
 FP_matrix = [FP_matrix FP];
 VP_matrix = [VP_matrix VP];
@@ -1293,7 +1358,7 @@ C_K=confusionmat(clasificacion(cvp.test(1)),labelK);
 	]
 '''METRICAS DE ERROR'''
 # Error cuadratico medio
-MSE=np.mean(Resultados10)
+mse = mean_squared_error(knn_predictions, te_class)
 
 # CURVA ROC
 fpr,tpr,tresholds = roc_curve(te_class, knn_predictions, pos_label=1)
@@ -1312,5 +1377,74 @@ VN,FP,FN,VP = cm(te_class,knn_predictions).ravel()
 \includegraphics[width = 0.7\linewidth]{../python/images/curvaROCpython.jpeg}
 \figcaption{ROC Python.}
 \end{figure}
+
+\newpage
+\seccion{Discusi\'on}
+
+A rasgos generales, las principales diferencias entre estos lenguajes son: En
+cuanto al tipo de software, Matlab es de pago; en cambio, Python y R son
+libres. Esto es un factor decisivo en la decisión de qué lenguaje utilizar.
+Matlab y R tienen muchas funciones integradas; mientras que en Python se han de
+programar o buscar bibliografía en blogs. En Python y R es necesario descargar
+las librerías a emplear antes de implementar funciones. Por último, para cada
+uno de los lenguajes podemos encontrar muchas de las funciones en sus
+respectivas páginas oficiales: MathWorks, Scikit-Learn y R Documentation.
+
+\subseccion{Análisis exploratorio}
+
+A la hora de cargar los datos, podemos observar que con Matlab se pueden cargar
+directamente a través de un archivo ‘-.xlsx’ mientras que con Python y R
+necesitamos un archivo “-.csv”.  En cuanto al histograma, la extensión del
+código es menor en Matlab, luego en R y por último en Python. Respecto a los
+resultados, no se aprecian diferencias entre los distintos lenguajes. Lo mismo
+ocurre con el kernel density, con boxplot y qqplot. Sin embargo, en Matlab,
+para la representación del boxplot y el qqplot, separemos las clases, tal y
+como se muestra en las figuras 9, 12 y 13.  Las matrices de correlación en
+Python no presentan datos numéricos, únicamente representación gráfica. En R,
+los datos numéricos se representan en una matriz a parte, teniendo como
+resultado de la matriz de correlación dos gráficas, una de visualización y otra
+de datos numéricos. En Matlab, ambas gráficas se ven representadas en una sola
+figura. Los resultados son aproximadamente iguales.
+
+
+\subseccion{Extracción de características}
+
+Para la extracción de características a partir de los métodos filters (Fscore y
+Relieff), hemos utilizado funciones integradas en todos los lenguajes,
+obteniendo como resultado para cada uno un ranking distinto.  En cuanto a los
+métodos Wrappers, en R y en Python obtenemos como resultado directamente las
+características relevantes. No obstante, en Matlab la función devuelve un
+vector de booleanos marcadas como ‘True’ las características más
+representativas. Cabe destacar, que en R es muy sencillo cambiar de método
+modificando los parámetros de la función y obtenemos una respuesta visualmente
+más atractiva.  Respecto al Análisis de las Componentes Principales, destacar
+que en Python y en R directamente la función te devuelve la varianza explicada
+por cada componente y la suma acumulada de dichas varianzas. Mientras que en
+Matlab realizamos la gráfica pareto para obtener la suma acumulada. En R y
+Python es necesario desarrollar un código para implementar la gráfica pareto.
+De la misma forma, ha sido necesario desarrollar un código para implementar la
+función biplot en Python, a diferencia de R, donde existe una función dentro de
+la cuál podemos seleccionar como parámetro ‘biplot’ y Matlab, donde hay una
+función directa para ello.
+
+\subseccion{Modelos de clasificación}
+
+Analizando los modelos de clasificación en Python, concluimos que la validación
+cruzada óptima es la que utiliza el método KFold con una media de 0.75 y una
+desviación típica de 0.10. Aunque a priori con el método LeaveOneOut se obtenga
+una media del score mayor (0.76), su desviación típica es demasiado elevada.
+En R se hace una partición del 30% de test y 70% de entrenamiento con 1000
+iteraciones, sacando la media de porcentaje de aciertos y la desviación típica
+del método.
+
+En Matlab lo hacemos de la misma forma que en R, pero mediante el método
+HoldOut. Obteniendo como resultado la media, desviación típica, y los
+intervalos de confianza para la media y la desviación típica. Además de HoldOut
+en Matlab también conseguimos realizar particiones mediante los métodos
+LeaveOneOut y KFold cambiando el método en la función cvpartition. Cabe
+destacar que Matlab tiene optimización de hiperparámetros para mejorar los
+resultados de entrenamiento en función de los datos de entrada.  Se ha
+realizado un gráfico en R para demostrar qué método es más eficiente en el
+entrenamiento de nuestros datos, tal y como muestra la figura 24.
 
 \end{document}
