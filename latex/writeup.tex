@@ -945,6 +945,45 @@ ldascores    1 1000 0.72 0.08   0.73    0.72 0.10 0.47 0.97  0.50 -0.09
 \vfill
 
 \newpage
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[Matlab an\'alisis lineal discriminante.]
+	\lstcaption{Matlab an\'alisis lineal discriminante.}},
+	captionpos=b,
+	]
+
+n   = length (x);
+p   = 0.3;
+cvp = cvpartition (n, 'HoldOut', p);
+iteraciones = 10000;
+resultados  = zeros (iteraciones,1);
+for i = 1 : iteraciones
+	cvp = cvpartition (n, 'HoldOut', p);
+	Mdl = fitcdiscr (x (cvp.training), y (cvp.training), ...
+		'DiscrimType', 'linear'); 
+	[label, score, cost] = predict (Mdl, x (cvp.test));
+	dif = abs (label - y (cvp.test));
+	errores  = sum (dif == 1); aciertos = sum (dif == 0);
+	resultados(i) = (aciertos/(aciertos+errores)) * 100;
+end
+[muHat,sigmaHat,muCI,sigmaCI] = normfit (resultados,.01)
+
+% % Linear
+% muHat =
+%        52.586
+% sigmaHat =
+%        7.5288
+% muCI =
+%        52.392
+%         52.78
+% sigmaCI =
+%         7.394
+%        7.6683
+\end{lstlisting}
+
+\newpage
 \subseccion{Clasificación Cuadrática}
 \vfill
 \lstinputlisting[
@@ -982,6 +1021,42 @@ qdascores    2 1000 0.69 0.07   0.70    0.69 0.10 0.43 0.87  0.43 -0.17
 \end{lstlisting}
 \vfill
 
+\newpage
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[Matlab an\'alisis lineal discriminante.]
+	\lstcaption{Matlab an\'alisis lineal discriminante.}},
+	captionpos=b,
+	]
+
+n   = length (x);
+p   = 0.3;
+cvp = cvpartition (n, 'HoldOut', p);
+iteraciones = 10000;
+resultados  = zeros (iteraciones,1);
+for i = 1 : iteraciones
+	cvp = cvpartition (n, 'HoldOut', p);
+	Mdl = fitcdiscr (x (cvp.training), y (cvp.training), ...
+		'DiscrimType', 'quadratic');
+	[label, score, cost] = predict (Mdl, x (cvp.test));
+	dif = abs (label - y (cvp.test));
+	errores  = sum (dif == 1); aciertos = sum (dif == 0);
+	resultados(i) = (aciertos/(aciertos+errores)) * 100;
+end
+[muHat,sigmaHat,muCI,sigmaCI] = normfit (resultados,.01)
+
+% % Quadratic
+% muHat =
+%        62.252
+% sigmaHat =
+%        8.3548
+% muCI =
+%        62.037 62.468
+% sigmaCI =
+%        8.2051 8.5096
+\end{lstlisting}
 \newpage
 \subseccion{Clasificación KNN}
 \vfill
