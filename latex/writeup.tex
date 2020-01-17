@@ -68,7 +68,7 @@
 
 \newpage
 
-\seccion{Preámbulo}
+\seccion{Preparaci\'on.}
 \vfill
 \lstinputlisting[
 	linerange = {8-38},
@@ -732,7 +732,23 @@ CPU: Intel i5-2500S (4) @ 2.70GHz
 GPU: AMD Radeon HD 6770M
 Memory: 7027MiB / 12288MiB
 Disk (/): 806G / 931G (87%)
-
 \end{lstlisting}
+
+\newpage
+\subseccion{Curva ROC}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.8\linewidth]{../R/images/roc.pdf}
+\figcaption{ROC R.}
+\label{fig:roc}
+\end{figure}
+
+\lstinputlisting[
+	linerange = {37-47},
+	mathescape=false,
+	caption = {[C\'odigo R para generar la curva ROC y la AUC.]
+	\lstcaption{C\'odigo R para generar la curva ROC y la AUC.}},
+	]{../R/src/roc.r}
 
 \end{document}
