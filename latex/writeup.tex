@@ -563,6 +563,23 @@ end
 \end{figure}
 
 \newpage
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[C\'odigo Matlab generador de los corrplots.]
+	\lstcaption{C\'odigo Matlab generador de los corrplots.}},
+	captionpos=b,
+	]
+corrplot (dataR2mat (:,1:end-1))
+\end{lstlisting}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{../matlab/images/corrplot1.eps}
+\figcaption{Matriz de correlaciones en Matlab.}
+\end{figure}
+\newpage
 
 \subseccion{Extracción de características.}
 
