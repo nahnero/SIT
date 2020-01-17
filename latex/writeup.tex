@@ -1447,4 +1447,109 @@ resultados de entrenamiento en función de los datos de entrada.  Se ha
 realizado un gráfico en R para demostrar qué método es más eficiente en el
 entrenamiento de nuestros datos, tal y como muestra la figura 24.
 
+\subseccion{Métrica de error}
+
+Hemos seleccionado como métrica de error el área bajo la curva ROC y la matriz
+de confusión, ya que en la bibliografía consultada se consideraban las más
+relevantes. Los resultados obtenidos para la curva ROC son muy similares tanto
+para Python como para Matlab y se hacen de forma directa con funciones
+diseñadas. En el caso de R el resultado es ligeramente distinto, dado que para
+poder calcular la curva ROC te sirves de dos funciones diferentes. La matriz de
+confusión para los tres lenguajes se implementan directamente con una sola
+función.
+
+\subseccion{Tiempos}
+	
+Hemos diseñado unas funciones simples del código analizado que nos permiten
+medir el tiempo que tarda en ejecutarse cada uno de los lenguajes. Los
+resultados obtenidos tras esta medición nos indican que el lenguaje de
+programación más rápido es el . 
+
+
+\seccion{Conclusiones}
+
+A la hora de realizar este trabajo, R ha sido el lenguaje más fácil de
+implementar y entender, y con el que conseguimos analizar de manera más visual
+los resultados. La herramienta ‘caret’ muestra todas las posibilidades de
+cálculo en la discriminación de variables así como de entrenamiento y
+validación de modelos predictivos. De la misma forma encontramos la aplicación
+en Matlab llamada ‘Classification Learner’, pero esta actúa como una caja
+negra, mostrando los resultados pero no el proceso realizado en su obtención.
+A continuación se adjunta una tabla comparativa de los tres lenguajes,
+considerando distintos criterios en la decisión del lenguaje más óptimo.
+
+\newpage \seccion{Bibliografia} 
+\begin{lstlisting}[breaklines, numbers = none, frame = none,basicstyle=\footnotesize]
+https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1-Tema3-3.pdf
+https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1-Tema3-4.pdf
+https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1-Tema3-5.pdf
+https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1-Tema3-6.pdf
+https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1.Tema-3.3%20Ejercicio/An%C3%A1lisis%20Exploratorio%20de%20Datos%20-%20Ejercicio.pdf
+https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1.Tema-3.4%20Ejercicio/Extraccio%CC%81n%20de%20caracteri%CC%81sticas%20-%20Ejercicio%20datos%20cancer.pdf
+https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1.Tema-3.5%20Ejercicio/SIT1-Tema3-5%20Ejercicio.pdf
+https://poliformat.upv.es/portal/site/GRA_13068_2019/tool/efb1c99d-9273-4c02-9e25-bf80d8501e72?panel=Main
+https://stackoverflow.com/questions/40527442/r-mlr-wrapper-feature-selection-hyperparameter-tuning-without-nested-nested
+http://topepo.github.io/caret/train-models-by-tag.html#roc-curves
+https://www.analyticsvidhya.com/blog/2018/05/improve-model-performance-cross-validation-in-python-r/
+http://www.sthda.com/english/articles/38-regression-model-validation/157-cross-validation-essentials-in-r/
+https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_curve.html?highlight=roc_curve
+https://rviews.rstudio.com/2019/03/01/some-r-packages-for-roc-curves/
+http://topepo.github.io/caret/train-models-by-tag.html#roc-curves
+https://medium.com/datadriveninvestor/computing-an-roc-graph-with-python-a3aa20b9a3fb
+http://sitiobigdata.com/2019/01/19/machine-learning-metrica-clasificacion-parte-3/#
+https://stats.stackexchange.com/questions/306326/how-to-make-a-2-level-factor-as-my-outcome-column
+https://quantdev.ssri.psu.edu/tutorials/cross-validation-tutorial
+https://medium.com/@yashdagli98/feature-selection-using-relief-algorithms-with-python-example-3c2006e18f83
+https://machinelearningmastery.com/how-to-estimate-model-accuracy-in-r-using-the-caret-package/
+https://www.uv.es/conesa/CursoR/material/handout-sesion2.pdf
+https://mauricioanderson.com/curso-r-estructuras-control/
+https://www.rdocumentation.org/packages/dismo/versions/1.1-4/topics/kfold
+https://www.rdocumentation.org/packages/sperrorest/versions/0.2-1/topics/partition.cv.strat
+https://www.rdocumentation.org/packages/DMwR/versions/0.4.1/topics/kNN
+https://rpubs.com/Joaquin_AR/250069
+https://medium.com/datos-y-ciencia/introducci%C3%B3n-a-los-modelos-de-regresi%C3%B3n-en-r-6ef5a4c47a8f
+https://www.machinelearningplus.com/machine-learning/caret-package/#31howtosplitthedatasetintotrainingandvalidation
+https://rpubs.com/joser/caret
+http://www.eio.uva.es/~valentin/ad3d/anadat/np/discrim/craneosTibet/craneosTibet_practicas-r.pdf
+https://www.r-bloggers.com/computing-and-visualizing-lda-in-r/
+http://www.eio.uva.es/~valentin/ad3d/anadat/np/discrim/craneosTibet/craneosTibet_practicas-r.pdf
+https://rpubs.com/Joaquin_AR/233932
+https://cran.r-project.org/web/packages/calibrate/vignettes/CalibrationGuide.pdf
+https://unalyticsteam.github.io/unalytics.github.io/R/Analitica%20de%20datos/02/Reescalar,_normalizar__y_variables_indicadoras.html
+https://rpubs.com/Cristina_Gil/PCA
+http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/118-principal-component-analysis-in-r-prcomp-vs-princomp/
+https://www.datacamp.com/community/tutorials/pca-analysis-r
+https://stats.stackexchange.com/questions/347652/default-stepaic-in-r
+https://www.rdocumentation.org/packages/cate/versions/1.1/topics/wrapper
+https://stat.ethz.ch/R-manual/R-patched/library/MASS/html/stepAIC.html
+https://stackoverflow.com/questions/36746575/how-to-use-wrapper-feature-selection-algorithms-in-r
+http://dspace.umh.es/bitstream/11000/4536/1/TD%20%C3%9Abeda%20Gonz%C3%A1lez%2C%20David.pdf
+https://stackoverflow.com/questions/46856834/relief-algorithm-in-r
+https://www.rdocumentation.org/packages/CORElearn/versions/1.53.1/topics/attrEval
+https://www.rdocumentation.org/packages/dprep/versions/3.0.2/topics/relief
+https://www.rdocumentation.org/packages/FSelector/versions/0.31/topics/relief
+https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html
+https://www.aprendemachinelearning.com/clasificar-con-k-nearest-neighbor-ejemplo-en-python/
+https://unipython.com/machine-learning-nearest-neighbors-regression/
+https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html
+https://docs.microsoft.com/es-es/sql/advanced-analytics/tutorials/python-ski-rental-linear-regression-train-model?view=sql-server-ver15
+https://stackoverflow.com/questions/3674409/how-to-split-partition-a-dataset-into-training-and-test-datasets-for-e-g-cros
+https://stats.stackexchange.com/questions/253509/linear-discriminant-analysis-biplot
+https://stackabuse.com/implementing-lda-in-python-with-scikit-learn/
+https://scikit-learn.org/0.16/modules/generated/sklearn.lda.LDA.html
+https://towardsdatascience.com/end-to-end-topic-modeling-in-python-latent-dirichlet-allocation-lda-35ce4ed6b3e0
+https://www.aprendemachinelearning.com/comprende-principal-component-analysis/
+https://sukhbinder.wordpress.com/2015/08/05/biplot-with-python/
+https://github.com/teddyroland/python-biplot/blob/master/biplot.py
+https://github.com/jundongl/scikit-feature
+https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFE.html
+https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.SelectKBest.html
+https://github.com/scikit-learn/scikit-learn/blob/5f3c3f037/sklearn/metrics/_classification.py#L1321
+\end{lstlisting}
+
+
+
+
+
+
 \end{document}
