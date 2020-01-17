@@ -879,6 +879,30 @@ pareto (latent)
 	\lstcaption{C\'odigo generador del Biplot en R.}},
 	]{../R/src/pca.r}
 \newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{../matlab/images/preg7.eps}
+\figcaption{Biplot Matlab.}
+\end{figure}
+
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[C\'odigo generador del Biplot en Matlab.]
+	\lstcaption{C\'odigo generador del Biplot en Matlab.}},
+	captionpos=b,
+	]
+hold on
+biplot (coeff (:,1:2), 'score', score(1:51,1:2), ...
+	'Color', 'k', 'MarkerSize',10)
+biplot (coeff (:,1:2), 'score', score(51:end,1:2), ...
+	'varlabels', varnames, 'MarkerSize',10)
+hold off
+\end{lstlisting}
+
+\newpage
 \seccion{Modelos de Clasificación}
 
 \subseccion{Clasificación Lineal}
