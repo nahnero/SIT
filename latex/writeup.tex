@@ -1098,6 +1098,44 @@ knnscores    3 1000 0.66 0.07   0.67    0.66 0.05 0.43 0.90  0.47 -0.07
 \end{lstlisting}
 \vfill
 \newpage
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[Matlab KNN.]
+       {\lstcaption{Matlab KNN.}}},
+	captionpos=b,
+	] 
+n   = length (x);
+p   = 0.3;
+cvp = cvpartition (n, 'HoldOut', p);
+iteraciones = 10000;
+resultados  = zeros (iteraciones,1);
+for i = 1 : iteraciones
+	cvp = cvpartition (n, 'HoldOut', p);
+	Mdl = fitcknn (x (cvp.training), y (cvp.training), ...
+		'NumNeighbors', 1);
+	[label, score, cost] = predict (Mdl, x (cvp.test));
+	dif = abs (label - y (cvp.test));
+	errores  = sum (dif == 1); aciertos = sum (dif == 0);
+	resultados(i) = (aciertos/(aciertos+errores)) * 100;
+end
+[muHat,sigmaHat,muCI,sigmaCI] = normfit (resultados,.01)
+
+% k = 1
+% muHat =
+%        53.105
+% sigmaHat =
+%        7.1829
+% muCI =
+%         52.92
+%         53.29
+% sigmaCI =
+%        7.0543
+%         7.316
+\end{lstlisting}
+
+\newpage
 \seccion{Postámbulo}
 
 \subseccion{Comparación \textit{LDA}, \textit{QDA}, \textit{KNN} R.}
