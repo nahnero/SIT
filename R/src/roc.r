@@ -45,7 +45,6 @@ dev.off ()
 
 auc_ROCR <- performance(pred, measure = "auc")
 auc_ROCR@y.values[[1]]
-
 suppressPackageStartupMessages (library (SDMTools))
 mat <- confusion.matrix(as.numeric (prd$class) - 1 , as.numeric (test.trans$clase) - 1,threshold=0.5)
 mat

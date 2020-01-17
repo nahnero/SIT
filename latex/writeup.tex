@@ -1236,10 +1236,81 @@ Disk (/): 806G / 931G (87%)
 \end{figure}
 
 \lstinputlisting[
-	linerange = {37-47},
+	linerange = {37-49},
 	mathescape=false,
 	caption = {[C\'odigo R para generar la curva ROC y la AUC.]
 	\lstcaption{C\'odigo R para generar la curva ROC y la AUC.}},
 	]{../R/src/roc.r}
+
+% [1] 0.6696429
+%     obs
+% pred  0  1
+%    0 10  6
+%    1  4 10
+% attr(,"class")
+% [1] "confusion.matrix"
+
+\newpage
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[C\'odigo Matlab para generar la curva ROC y la AUC.]
+       {\lstcaption{C\'odigo Matlab para generar la curva ROC y la AUC.}}},
+	]
+[FP,VP] = perfcurve(labelK, clasificacion(cvp.test(i)), '1');
+FP_matrix = [FP_matrix FP];
+VP_matrix = [VP_matrix VP];
+end
+FP_media = mean(FP_matrix,2);
+VP_media = mean(VP_matrix,2);
+[media_K, desviacion_K] = normfit(Paciertos);
+
+% METRICAS DE ERROR
+
+% Curva ROC
+figure;
+plot(FP_media,VP_media), xlabel('Ratio Falso Positivo'), ylabel('Ratio Verdadero Positivo'), title('Curva ROC')
+
+% Hacemos la matriz de confusion
+C_K=confusionmat(clasificacion(cvp.test(1)),labelK);
+%figure(2);confusionchart(C_K);title('Matriz de confusion KFold');
+%cp_K = classperf(labelL,clasificacion(cvp.test(1)));
+\end{lstlisting}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.7\linewidth]{../matlab/images/confusion_matrix.jpg}
+\figcaption{Confusion matrix Matlab.}
+\end{figure}
+
+\newpage
+\begin{lstlisting}[
+	frame=single,
+	numbers=left,
+	caption = {[C\'odigo Python para generar la curva ROC y la AUC.]
+       {\lstcaption{C\'odigo Python para generar la curva ROC y la AUC.}}},
+	]
+'''METRICAS DE ERROR'''
+# Error cuadratico medio
+MSE=np.mean(Resultados10)
+
+# CURVA ROC
+fpr,tpr,tresholds = roc_curve(te_class, knn_predictions, pos_label=1)
+plt.plot(fpr,tpr)
+plt.xlabel('Ratio de falsos positivos')
+plt.ylabel('Ratio de falsos negativos')
+plt.show()
+
+# MATRIZ DE CONFUSION
+matriz = cm(te_class,knn_predictions)
+VN,FP,FN,VP = cm(te_class,knn_predictions).ravel() 
+\end{lstlisting}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.7\linewidth]{../python/images/curvaROCpython.jpeg}
+\figcaption{ROC Python.}
+\end{figure}
 
 \end{document}
