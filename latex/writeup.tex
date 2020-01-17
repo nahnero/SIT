@@ -480,6 +480,36 @@ end
 	\lstcaption{C\'odigo R generador de los QQplots.}},
 	]{../R/src/qqplot.r}
 \newpage
+
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[C\'odigo Matlab generador de los QQplots.]
+	\lstcaption{C\'odigo Matlab generador de los QQplots.}},
+	captionpos=b,
+	]
+for (i = 1 : 10)
+	subplot (5, 2, i);
+	qqplot (dataR2mat (dataR2mat (:, end) == 1, i));
+	hold on;
+	qqplot (dataR2mat (dataR2mat (:, end) == 2, i));
+end
+\end{lstlisting}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = \linewidth]{../matlab/images/qqplo1.eps}
+\figcaption{QQplots Matlab Clase 1.}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width = \linewidth]{../matlab/images/qqplo2.eps}
+\figcaption{QQplots Matlab Clase 2.}
+\end{figure}
+\newpage
+
 \subsubseccion{Corrplot}
 \vfill
 \begin{figure}[h]
