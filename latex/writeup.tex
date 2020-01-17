@@ -413,8 +413,8 @@ end
 
 \lstinputlisting[
 	linerange = {8-18},
-	caption = {[C\'odigo R generador de los boxplots con datos an\'omalos.]
-	\lstcaption{C\'odigo R generador de los boxplots con datos an\'omalos.}},
+	caption = {[C\'odigo R generador de los boxplots.]
+	\lstcaption{C\'odigo R generador de los boxplots.}},
 	]{../R/src/boxplot.r}
 
 \newpage
@@ -422,6 +422,7 @@ end
 \begin{figure}[h]
 \centering
 \includegraphics[width = \linewidth]{../matlab/images/box1.eps}
+\includegraphics[width = \linewidth]{../matlab/images/box2.eps}
 \figcaption{Boxplots Matlab para datos con anomalias.}
 \end{figure}
 
@@ -587,19 +588,41 @@ corrplot (dataR2mat (:,1:end-1))
 
 \lstinputlisting[
 	linerange = {16 - 32},
-	caption = {[Aplicaci\'on m\'etodos \textit{filter} de selecci\'on caracter\'isticas.]
-	\lstcaption{Aplicaci\'on m\'etodos \textit{filter} de selecci\'on caracter\'isticas.}},
+	caption = {[M\'etodos filter Python.]
+	\lstcaption{M\'etodos filter Python.}},
 	]{../python/src/featureselection.py}
 
 \begin{lstlisting}[
-	caption = {[Ranking de variables seg\'un los m\'etodos filter.]
-	{\lstcaption{Ranking de variables seg\'un los m\'etodos filter.}}},
+	caption = {[Ranking de variables seg\'un los m\'etodos filter Python.]
+	{\lstcaption{Ranking de variables seg\'un los m\'etodos filter Python.}}},
 	]
 [4 5 9 6 7 3 1 8 2] -> fscore
 [1 9 8 7 6 5 4 2 3] -> relieff
 [3 4 1 1 1 2 3 6 1] -> diferencias
 2.4444444444444446  -> media
 \end{lstlisting}
+
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[Ranking de variables Matlab.]
+	{\lstcaption{Ranking de variables Matlab.}}},
+	captionpos=b,
+	]
+[out   , rank]   = fscore  (x, y);
+[RANKED, WEIGHT] = relieff (x, y, 1); % k = 1 neighbour 
+diferencia = abs(rank-RANKED')
+media = mean (diferencia) 
+    var1  var2  var3  var4  var5  var6  var7  var8 var9
+     3     5     4     8     2     9     1     6     7    -> fscore
+     1     3     2     7     4     5     8     9     6    -> relieff
+diferencias =
+     2     2     2     1     2     4     7     3     1
+media =
+     2.6667 
+\end{lstlisting}
+
 
 \newpage
 \begin{lstlisting}[
