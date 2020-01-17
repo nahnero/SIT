@@ -6,6 +6,8 @@
 \usepackage{amsmath}
 \usepackage{wrapfig}
 \usepackage{xcolor}
+\usepackage{enumerate}
+\usepackage{matlab-prettifier}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listingsutf8}
 \usepackage{tocloft}
@@ -19,6 +21,8 @@
 \hyperref[fig:toc]{\vspace{-2cm}\section{{#1}}\phantom{}\vspace{-1.5cm}}}
 \newcommand{\subseccion}[1]{
 \hyperref[fig:toc]{\vspace{-2cm}\subsection{{#1}}\phantom{}\vspace{-1.5cm}}}
+\newcommand{\subsubseccion}[1]{
+\hyperref[fig:toc]{\vspace{-2cm}\subsubsection{{#1}}\phantom{}\vspace{-1.5cm}}}
 \newcommand{\lstcaption}[1]{\hyperref[lsts]{{#1}}}
 \newcommand{\figcaption}[1]{\caption[#1]{\hyperref[figs]{#1}}}
 
@@ -68,7 +72,148 @@
 
 \newpage
 
-\seccion{Preparaci\'on.}
+
+\newpage
+\seccion{Resumen}
+
+El principal objetivo de este trabajo es adentrarnos en otros lenguajes de
+programación como son \textit{Python} y \textit{R}, al mismo tiempo que
+profundizamos en las herramientas para el soporte a la decisión médica. Otro
+objetivo del trabajo es poder ayudar a otras personas que vayan a realizar un
+trabajo similar a elegir el lenguaje de programación, mediante una comparación
+de los tres mencionados anteriormente, que más se ajusta a sus necesidades.
+
+Para lograr una buena comparación de lenguajes nos basaremos en ciertos
+aspectos como son la facilidad de aprendizaje del lenguaje, la facilidad de
+comprensión de la asignatura con cada lenguaje, las funciones integradas,
+incluso los distintos tipos de gráficos que nos ofrece cada uno.
+
+\textbf{Palabras Clave}: Matlab, Python, R, machine learning.
+
+\seccion{Introducci\'on}
+
+Debido al aumento de información que se genera y almacena hoy en día es
+necesario, más que nunca, una clasificación de datos. Los CDSSs basados en
+datos utilizan técnicas de aprendizaje automático que permiten al sistema
+aprender de las experiencias pasadas y/o encontrar patrones en los datos
+clínicos. Estos permiten minimizar el riesgo de fuga de datos, además de ser
+útil en la ayuda al diagnóstico médico.
+
+Por ello, en el presente trabajo se lleva a cabo un análisis exploratorio de un
+conjunto de datos de cáncer de mama de Coimbra que incluye las características
+clínicas de sujetos sanos y enfermos, una selección y extracción de
+características del conjunto de datos, distintos modelos de clasificación y,
+por último, diferentes estrategias y métricas de evaluación.
+
+En el análisis exploratorio se realiza un preprocesado de los datos donde se
+verifica la integridad de la base de datos, se eliminan las filas corruptas y
+se estudian los datos anómalos. Posteriormente se analiza la correlación entre
+variables y entre datos, la normalidad de estos datos y su distribución
+mediante métricas básicas como histograma, kernel density, qqplot y boxplot.
+
+En el proceso de selección y extracción de características investigamos cuáles
+de las  variables son estadísticamente relevantes. Ello se consigue gracias a
+métodos de selección –aquellos basados en Filters o Wrappers– y de extracción
+de características –como son Análisis de Componentes Principales y Análisis
+Discriminante Lineal. Estos métodos tienen como objetivo final la reducción de
+dimensionalidad.
+
+
+En cuanto a los modelos de clasificación podemos distinguir los de aprendizaje
+supervisado, aplicados en este trabajo, y los basados en el aprendizaje no
+supervisado. Los modelos de clasificación supervisados están basados en el
+aprendizaje mediante pares dato-solución, como  KNN, LDA y QDA. Los métodos no
+supervisados, en cambio, son aquellos en los que los sistemas se adaptan
+mediante las características intrínsecas de los datos.
+
+Por último, para estudiar las estrategias y métricas de evaluación emplearemos
+la matriz de confusión de datos, la curva ROC y el error cuadrático medio.
+Estas cuatro fases se realizan en tres lenguajes de programación distintos:
+Matlab, Python y R.
+
+\seccion{Materiales y M\'etodos}
+
+La base de datos utilizada en este trabajo es un conjunto de datos de cáncer de
+mama de Coimbra que incluye las características clínicas de 64 pacientes con
+cáncer de mama y 52 controles sanos. Está formada por 9 predictores –datos
+antropométricos y parámetros recopilados de análisis de sangre rutinarios– y 1
+variable dependiente binaria que indica la presencia o no de cáncer de mama (1:
+controles saludables y 2: pacientes). Los 9 predictores son: Edad (años), IMC
+(kg / m2), Glucosa (mg / dL), Insulina ($\mu$U / mL), HOMA, Leptina (ng / mL),
+Adiponectina ($\mu$g / mL), Resistencia (ng / mL) y MCP-1 (pg / dL).
+
+Los lenguajes de programación utilizados son Matlab, Python y R. Matlab es un
+lenguaje interpretado propiedad de MathWorks; requiere de licencia comercial,
+es ampliamente usado en contextos ingenieriles. Python es un proyecto de código
+abierto de Guido van Rossum, es un lenguaje de scripting de uso general, no
+especializado. R es el único lenguaje especializado en ciencia de datos, es el
+antecesor a S; también de código abierto. Una vez definidos los materiales,
+procedemos a describir la metodología a seguir; será desarrollada en Python y
+R. Haremos una comparación con el desarrollo de Matlab realizado a lo largo de
+la asignatura.
+
+\begin{enumerate}
+\item
+Análisis exploratorio:
+\begin{enumerate}[a)]
+\item
+Cargar datos.
+\item
+Solucionar existencia de casos perdidos.
+\item
+Obtener de cada variable númerica y separado por clases el histograma, kernel density, qqplot y boxplot.
+\item
+Realizar plot matriz de gráficos de dispersión y detección de variables correlacionadas.
+\item
+Detección y solución de la presencia de outliers.
+\end{enumerate}
+\item
+Extracción de características:
+\begin{enumerate}[a)]
+\item
+Aplicar Filters (fscore y relieff) y Wrappers para seleccionar las variables más significativas.
+\item
+Normalizar los datos mediante zscore.
+\item
+Aplicar el Análisis de Componentes Principales para obtener un nuevo conjunto de características relevantes (PCA).
+\item
+Representar la variabilidad de los datos mediante pareto y la influencia de cada una de las componentes originales para la generación de cada componente principal con biplot.
+\item
+Transformar los datos usando la matriz de variables originales y la matriz de coeficientes que ofrece PCA.
+\item
+Representar las proyecciones de las primeras componentes principales mediante el gráfico de dispersión scatter.
+\item
+Aplicar Análisis Lineal Discriminante (LDA) para obtener un nuevo conjunto de características relevantes.
+\end{enumerate}
+\item
+Modelos de clasificación:
+\begin{enumerate}[a)]
+\item
+Separar los datos en una muestra de entrenamiento y otra de validación del modelo a partir del método ‘HoldOut’.
+\item
+Entrenar un modelo de clasificación lineal, cuadrático y basado en k-vecinos con distinto número de vecinos.
+\end{enumerate}
+\item
+Estrategia y métricas de evaluación:
+\begin{enumerate}[a)]
+\item
+Separar los datos en una muestra de entrenamiento y otra de validación del modelo a partir del método ‘KFold’.
+\item
+Entrenar un modelo de clasificación basado en k-vecinos.
+\item
+Obtener el error cuadrático medio, la curva ROC y la matriz de confusión.
+\end{enumerate}
+
+\end{enumerate}
+\newpage
+
+\seccion{Resultados}
+\phantom{}
+\vspace{1cm}
+\subseccion{Análisis exploratorio}
+\phantom{}
+\vspace{1cm}
+\subsubseccion{Preparaci\'on}
 \vfill
 \lstinputlisting[
 	linerange = {8-38},
@@ -83,7 +228,24 @@
 	]{../R/src/preprocessing.r}
 \vfill
 \newpage
-\seccion{Histogramas}
+
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	label=lst:cod1,
+	caption = {[Importaciones iniciales y preparacion de datos en Matlab.]
+	\lstcaption{Importaciones iniciales y preparacion de datos en Matlab.}},
+	captionpos=b,
+	]
+load ('Data.mat')
+% Eliminamos filas que contengan NaN:
+dataR2mat = dataR2mat (~any (ismissing (dataR2), 2), :);
+% Cuando queramos eliminar datos anomalos usaremos:
+dataR2mat = dataR2mat (~any (isoutlier (dataR2mat (:,1:end-1)), 2), :);
+\end{lstlisting}
+\newpage
+\subsubseccion{Histogramas}
 
 En este apartado dibujamos los histogramas comparativos.
 
@@ -126,7 +288,7 @@ En este apartado dibujamos los histogramas comparativos.
 
 \newpage
 
-\seccion{Kernel Density}
+\subsubseccion{Kernel Density}
 
 \begin{figure}[h]
 \centering
@@ -165,7 +327,7 @@ En este apartado dibujamos los histogramas comparativos.
 	]{../R/src/kerneldensity.r}
 \newpage
 
-\seccion{Boxplot}
+\subsubseccion{Boxplot}
 
 \begin{figure}[h]
 \centering
@@ -206,7 +368,7 @@ En este apartado dibujamos los histogramas comparativos.
 	]{../R/src/boxplot.r}
 
 \newpage
-\seccion{QQplot}
+\subsubseccion{QQplot}
 
 \begin{figure}[h]
 \centering
@@ -245,7 +407,7 @@ En este apartado dibujamos los histogramas comparativos.
 	\lstcaption{C\'odigo R generador de los QQplots.}},
 	]{../R/src/qqplot.r}
 \newpage
-\seccion{Corrplot}
+\subsubseccion{Corrplot}
 \vfill
 \begin{figure}[h]
 \centering
@@ -299,7 +461,9 @@ En este apartado dibujamos los histogramas comparativos.
 
 \newpage
 
-\seccion{Filter Methods}
+\subseccion{Extracción de características.}
+
+\subsubseccion{Filter Methods}
 
 \lstinputlisting[
 	linerange = {16 - 32},
@@ -363,7 +527,7 @@ for (i in infoCore (what = "attrEval")){
 \end{lstlisting}
 
 \newpage
-\seccion{Wrapper Methods}
+\subsubseccion{Wrapper Methods}
 
 \lstinputlisting[
 	linerange = {38 - 58},
@@ -439,7 +603,7 @@ dev.off ()
 \vfill
 \phantom{}
 \newpage
-\seccion{PCA}
+\subsubseccion{PCA}
 \vspace{1cm}
 \lstinputlisting[
 	linerange = {60-65},
@@ -473,7 +637,7 @@ Propor. of Var. 0.3393 0.1707 0.130 0.122 0.0808 0.0737 0.04878 0.03133 0.00342
 Cum. Var.       0.3393 0.5100 0.640 0.762 0.8428 0.9165 0.96525 0.99658 1.00000
 \end{lstlisting}
 
-\subseccion{Pareto}
+\subsubseccion{Pareto}
 \vspace{0.9cm}
 \lstinputlisting[
 	linerange = {93-100},
@@ -497,7 +661,7 @@ Cum. Var.       0.3393 0.5100 0.640 0.762 0.8428 0.9165 0.96525 0.99658 1.00000
 \end{figure}
 
 \newpage
-\subseccion{Biplot}
+\subsubseccion{Biplot}
 
 \begin{figure}[h]
 \centering
