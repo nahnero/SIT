@@ -800,6 +800,21 @@ Propor. of Var. 0.3393 0.1707 0.130 0.122 0.0808 0.0737 0.04878 0.03133 0.00342
 Cum. Var.       0.3393 0.5100 0.640 0.762 0.8428 0.9165 0.96525 0.99658 1.00000
 \end{lstlisting}
 
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[\textit{Principal Component Analysis} Matlab y pareto.]
+	\lstcaption{\textit{Principal Component Analysis} Matlab y pareto.}},
+	captionpos=b,
+	]
+x = zscore (x);
+[coeff, score, latent] = pca (x);
+pareto (latent)
+\end{lstlisting}
+
+\newpage
+
 \subsubseccion{Pareto}
 \vspace{0.9cm}
 \lstinputlisting[
@@ -815,6 +830,9 @@ Cum. Var.       0.3393 0.5100 0.640 0.762 0.8428 0.9165 0.96525 0.99658 1.00000
 	]{../R/src/pca.r}
 
 
+\newpage
+\phantom{}
+\vfill{}
 \begin{figure}[h]
 \centering
 \includegraphics[width = 0.49\linewidth]{../python/images/pareto.pdf}
@@ -823,6 +841,15 @@ Cum. Var.       0.3393 0.5100 0.640 0.762 0.8428 0.9165 0.96525 0.99658 1.00000
 \label{fig:pareto}
 \end{figure}
 
+\vspace{0.9cm}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 0.49\linewidth]{../matlab/images/pareto.eps}
+	\figcaption{Diagrama de Pareto en Matlab.}
+\label{fig:pareto}
+\end{figure}
+\vfill{}
 \newpage
 \subsubseccion{Biplot}
 
