@@ -288,6 +288,32 @@ En este apartado dibujamos los histogramas comparativos.
 
 \newpage
 
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{../matlab/images/hist.eps}
+\figcaption{Histogramas Matlab.}
+\label{fig:histmatl}
+\end{figure}
+
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	label=lst:cod2,
+	caption = {[C\'odigo Matlab generador de los histogramas.]
+	\lstcaption{C\'odigo Matlab generador de los histogramas.}},
+	captionpos=b,
+	]
+for (i = 1 : 10)
+	subplot (5, 2, i);
+	histogram (dataR2mat (dataR2mat (:, end) == 1, i), 15);
+	hold on;
+	histogram (dataR2mat (dataR2mat (:, end) == 2, i), 15);
+end
+\end{lstlisting}
+
+\newpage
+
 \subsubseccion{Kernel Density}
 
 \begin{figure}[h]
@@ -325,6 +351,30 @@ En este apartado dibujamos los histogramas comparativos.
 	caption = {[C\'odigo R generador de los density plots.]
 	\lstcaption{C\'odigo R generador de los density plots.}},
 	]{../R/src/kerneldensity.r}
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{../matlab/images/ksden.eps}
+\figcaption{Gr\'aficos de densidad Matlab.}
+\end{figure}
+
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[C\'odigo Matlab generador de los kdensity.]
+	\lstcaption{C\'odigo Matlab generador de los kdensity.}},
+	captionpos=b,
+	]
+for (i = 1 : 10)
+	subplot (5, 2, i);
+	ksdensity (dataR2mat (dataR2mat (:, end) == 1, i));
+	hold on;
+	ksdensity (dataR2mat (dataR2mat (:, end) == 2, i));
+end
+\end{lstlisting}
+
 \newpage
 
 \subsubseccion{Boxplot}
@@ -367,6 +417,29 @@ En este apartado dibujamos los histogramas comparativos.
 	\lstcaption{C\'odigo R generador de los boxplots con datos an\'omalos.}},
 	]{../R/src/boxplot.r}
 
+\newpage
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = \linewidth]{../matlab/images/box1.eps}
+\figcaption{Boxplots Matlab para datos con anomalias.}
+\end{figure}
+
+\begin{lstlisting}[
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[C\'odigo Matlab generador de los boxplots.]
+	\lstcaption{C\'odigo Matlab generador de los boxplots.}},
+	captionpos=b,
+	]
+for (i = 1 : 10)
+	subplot (5, 2, i);
+	boxplot (dataR2mat (dataR2mat (:, end) == 1, i));
+	hold on;
+	boxplot (dataR2mat (dataR2mat (:, end) == 2, i));
+end
+\end{lstlisting}
 \newpage
 \subsubseccion{QQplot}
 
