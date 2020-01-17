@@ -717,34 +717,54 @@ sbs <- selectFeatures (
 # mmce.test.mean=0.1800000
 \end{lstlisting}
 
+\vfill
 \begin{lstlisting}[
-	caption =   {[M\'etodo Boruta \textit{wrapper} de Random Forest R.]
-	{\lstcaption{M\'etodo Boruta \textit{wrapper} de Random Forest R.}}},
+	style=Matlab-editor,
+	frame=single,
+	numbers=left,
+	caption = {[Resultados Matlab del filtrado mediante wrappers.]
+	{\lstcaption{Resultados Matlab del filtrado mediante wrappers.}}},
+	captionpos=b,
 	]
-# esto es extra
-library (Boruta)
-Boruta (as.factor (clase)~., datos, maxRuns = 101) -> borutaout
-
-# Boruta performed 100 iterations in 4.317041 secs.
-#  5 attributes confirmed important: age, bmi, glucose, leptin, MCP1;
-#  3 attributes confirmed unimportant: HOMA, insulin, resistin;
-#  1 tentative attributes left: adiponectin;
-
-pdf ("../images/boruta.pdf")
-plot (borutaout, las = 2, xlab = '', main = 'Boruta Variable Importance')
-dev.off ()
+fun = @(XT,yT,Xt,yt) ...
+	      (sum ((yt - classify (Xt,XT,yT,'quadratic'))~=0));
+fsf = sequentialfs (fun, x, y,'direction', 'forward', 'cv', 10);
+fsb = sequentialfs (fun, x, y,'direction', 'backward', 'cv', 10);
+[fsf' fsb']'
+ans =
+   1   0   0   0   0   0   0   0   0   -> forward
+   1   1   1   1   0   0   1   1   0   -> backward
 \end{lstlisting}
+\vfill
 
-\newpage
-\phantom{}
-\vfill
-\begin{figure}[h]
-\centering \includegraphics[width = 0.8\linewidth]{../R/images/boruta.pdf} \figcaption{Representación gráfica de la importancia de las variables
-	seleccionadas por Boruta.}
-\label{fig:bor}
-\end{figure}
-\vfill
-\phantom{}
+% \begin{lstlisting}[
+%         caption =   {[M\'etodo Boruta \textit{wrapper} de Random Forest R.]
+%         {\lstcaption{M\'etodo Boruta \textit{wrapper} de Random Forest R.}}},
+%         ]
+% # esto es extra
+% library (Boruta)
+% Boruta (as.factor (clase)~., datos, maxRuns = 101) -> borutaout
+
+% # Boruta performed 100 iterations in 4.317041 secs.
+% #  5 attributes confirmed important: age, bmi, glucose, leptin, MCP1;
+% #  3 attributes confirmed unimportant: HOMA, insulin, resistin;
+% #  1 tentative attributes left: adiponectin;
+
+% pdf ("../images/boruta.pdf")
+% plot (borutaout, las = 2, xlab = '', main = 'Boruta Variable Importance')
+% dev.off ()
+% \end{lstlisting}
+
+% \newpage
+% \phantom{}
+% \vfill
+% \begin{figure}[h]
+% \centering \includegraphics[width = 0.8\linewidth]{../R/images/boruta.pdf} \figcaption{Representación gráfica de la importancia de las variables
+	% seleccionadas por Boruta.}
+% \label{fig:bor}
+% \end{figure}
+% \vfill
+% \phantom{}
 \newpage
 \subsubseccion{PCA}
 \vspace{1cm}
