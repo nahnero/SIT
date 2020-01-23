@@ -7,6 +7,8 @@
 \usepackage{wrapfig}
 \usepackage{xcolor}
 \usepackage{enumerate}
+\usepackage{tabulary,booktabs}
+\usepackage{ragged2e}
 \usepackage{matlab-prettifier}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listingsutf8}
@@ -45,7 +47,8 @@
 }
 
 \begin{document}
-\title{\textbf{Sistemas de Información y Telemedicina.
+\title{\textbf{Replicación de los ejercicios prácticos de la assignatura
+en los lenguajes R y Python, y comparación de los mismos.
 \thanks{\href{https://www.upv.es/titulaciones/GIB/indexc.html}{Grado en Ingeniería Biomédica, Escuela Técnica Superior de Ingenieros Industriales, Valencia, España.}}}}
 \date{\today}
 \author{
@@ -57,7 +60,7 @@
 \end{tabular}
 }
 \maketitle{}
-
+\newpage
 \tableofcontents{}
 \addtocontents{toc}{\textbf{Sección}~\hfill\textbf{Página}\par}
 \label{fig:toc}
@@ -611,16 +614,16 @@ corrplot (dataR2mat (:,1:end-1))
 	captionpos=b,
 	]
 [out   , rank]   = fscore  (x, y);
-[RANKED, WEIGHT] = relieff (x, y, 1); % k = 1 neighbour 
+[RANKED, WEIGHT] = relieff (x, y, 1); % k = 1 neighbour
 diferencia = abs(rank-RANKED')
-media = mean (diferencia) 
+media = mean (diferencia)
     var1  var2  var3  var4  var5  var6  var7  var8 var9
      3     5     4     8     2     9     1     6     7    -> fscore
      1     3     2     7     4     5     8     9     6    -> relieff
 diferencias =
      2     2     2     1     2     4     7     3     1
 media =
-     2.6667 
+     2.6667
 \end{lstlisting}
 
 
@@ -962,7 +965,7 @@ resultados  = zeros (iteraciones,1);
 for i = 1 : iteraciones
 	cvp = cvpartition (n, 'HoldOut', p);
 	Mdl = fitcdiscr (x (cvp.training), y (cvp.training), ...
-		'DiscrimType', 'linear'); 
+		'DiscrimType', 'linear');
 	[label, score, cost] = predict (Mdl, x (cvp.test));
 	dif = abs (label - y (cvp.test));
 	errores  = sum (dif == 1); aciertos = sum (dif == 0);
@@ -1105,7 +1108,7 @@ knnscores    3 1000 0.66 0.07   0.67    0.66 0.05 0.43 0.90  0.47 -0.07
 	caption = {[Matlab KNN.]
        {\lstcaption{Matlab KNN.}}},
 	captionpos=b,
-	] 
+	]
 n   = length (x);
 p   = 0.3;
 cvp = cvpartition (n, 'HoldOut', p);
@@ -1369,12 +1372,12 @@ plt.show()
 
 # MATRIZ DE CONFUSION
 matriz = cm(te_class,knn_predictions)
-VN,FP,FN,VP = cm(te_class,knn_predictions).ravel() 
+VN,FP,FN,VP = cm(te_class,knn_predictions).ravel()
 \end{lstlisting}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width = 0.7\linewidth]{../python/images/curvaROCpython.jpeg}
+\includegraphics[width = 0.6\linewidth]{../python/images/curvaROCpython.jpeg}
 \figcaption{ROC Python.}
 \end{figure}
 
@@ -1459,11 +1462,12 @@ confusión para los tres lenguajes se implementan directamente con una sola
 función.
 
 \subseccion{Tiempos}
-	
+
 Hemos diseñado unas funciones simples del código analizado que nos permiten
 medir el tiempo que tarda en ejecutarse cada uno de los lenguajes. Los
 resultados obtenidos tras esta medición nos indican que el lenguaje de
-programación más rápido es el . 
+programación más rápido es R.
+\newpage
 
 
 \seccion{Conclusiones}
@@ -1478,8 +1482,49 @@ negra, mostrando los resultados pero no el proceso realizado en su obtención.
 A continuación se adjunta una tabla comparativa de los tres lenguajes,
 considerando distintos criterios en la decisión del lenguaje más óptimo.
 
-\newpage \seccion{Bibliografia} 
-\begin{lstlisting}[breaklines, numbers = none, frame = none,basicstyle=\footnotesize]
+\setlength{\tymin}{50pt}
+\let\raggedright\RaggedRight
+\begin{tabulary}{\textwidth}{LCCC}
+\hline
+&\textbf{Matlab}&\textbf{Python}&\textbf{R}\\\hline
+\textbf{Tipo de Software} & De pago &Libre&Libre\\&&&\\
+\textbf{Simpleza de código} & El más simple, no necesita librerías.
+& Mayor complejidad.& Muy intuitivo, necesita importar librerías.\\&&&\\
+\textbf{Funciones Integradas} &Muchas&Muy pocas&Algunas\\&&&\\
+\textbf{Paquete Gráfico}&Animaciones y figuras interactivas.&
+Alto grado de personalización manual.&
+ggplot2 automatiza los gráficos comunes.\\&&&\\
+\textbf{Resultados}&Comentado en discusión.&Comentado en discusión.&
+Comentado en discusión\\&&&\\
+\textbf{Rapidez de ejecución}&Al tener siempre todas sus librerías cargadas,
+tarda más en cargar. Puede hacer uso de la GPU.&Ligeramente más lento
+que R. Al estar implementadas sus funciones en C, su velocidad es
+suficiente.& Hay librerías que fácilmente permiten paralelizar
+el procesamiento de algunas funciones (*apply...).\\&&&\\
+\textbf{Aprendizaje}&Es fácil de aprender porque hay muchas funciones
+específicas e interfaces gráficas.& Te presta la facilidad de
+hacer la función y entenderla tu mismo, así como implementar
+funciones ya integradas.&Igual que Python.\\&&&\\
+\textbf{Comprensión asignatura} &Como todo el código está oculto ‘BlackBox’ no
+se llega a entender la base matemática.&La dificultad que supone
+crear el código, hace que no se preste tanta atención al análisis
+de los resultados. & Permite centrarte más en los resultados que has
+obtenido, dado que implementar las funciones es relativamente
+sencillo.\\&&&\\
+\textbf{Busqueda Bibliográfia}& Tiene buena documentación por parte de
+MathWorks, pero tiene menos recursos hechos por otros
+(blogs, artículos, libros, vídeos...)&Tiene documentación
+aportada por la propia organización Python y además la
+presencia en las redes es mayor.&Tiene buena documentación y existe
+mucha literatura especializada sobre temas técnicos en profundidad
+(Machine Learnig, Artificial inteligence...).
+\end{tabulary}
+\newpage
+
+\seccion{Bibliografia}
+
+\begin{lstlisting}[breaklines, frame = none, basicstyle=\footnotesize,
+language = lisp]
 https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1-Tema3-3.pdf
 https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1-Tema3-4.pdf
 https://poliformat.upv.es/access/content/group/GRA_13068_2019/SIT1-Tema3-5.pdf
